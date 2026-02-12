@@ -244,9 +244,13 @@ const movies = [
         year: 2011,
         director: "Surender Reddy",
         songs: [
-            { name: "Dhamarukam", file: "Songs/Oosaravelli-Dhamarukam.mp3" },
-            { name: "Neeve Na", file: "Songs/Oosaravelli-NeeveNa.mp3" },
-            { name: "Nee Jathaga Nenundali", file: "Songs/Oosaravelli-NeeJathagaNenundali.mp3" }
+            { name: "Sri Anjaneyam", file: "Songs/Sri Anjaneyam-Oosaravelli.mp3" },
+            { name: "Nenante Naaku", file: "Songs/Nenante Naaku-Oosaravelli.mp3" },
+            { name: "Love Ante Caring", file: "Songs/Love Ante Caring-Oosaravelli.mp3" },
+            { name: "Niharika", file: "Songs/Niharika-Oosaravelli.mp3" },
+            { name: " Dandiya India", file: "Songs/Dandiya India-Oosaravelli.mp3" },
+            { name: "Yelango Yelango", file: "Songs/Yelango Yelango-Oosaravelli.mp3" },
+            { name: "Brathakaali", file: "Songs/Brathakaali-Oosaravelli.mp3" }
         ]
     },
     {
