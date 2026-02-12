@@ -232,9 +232,11 @@ const movies = [
         year: 2011,
         director: "Meher Ramesh",
         songs: [
-            { name: "Thappu Thanda", file: "Songs/Shakti-ThappuThanda.mp3" },
-            { name: "Sweety", file: "Songs/Shakti-Sweety.mp3" },
-            { name: "Shakti Title", file: "Songs/Shakti-ShaktiTitle.mp3" }
+            { name: "Thaliya Thaliya", file: "Songs/Thaliya Thaliya-Shakti.mp3" },
+            { name: "Surro Surra", file: "Songs/Surro Surra-Shakti.mp3" },
+            { name: "Prema Desham", file: "Songs/Prema Desham-Shakti.mp3" },
+            { name: "Yamaga Unde", file: "Songs/Yamaga Unde-Shakti.mp3" },
+            { name: "Mahishasura Mardhini", file: "Songs/Mahishasura Mardhini-Shakti.mp3" }
         ]
     },
     {
