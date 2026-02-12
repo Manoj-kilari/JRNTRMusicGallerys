@@ -272,10 +272,12 @@ const movies = [
         year: 2013,
         director: "Srinu Vaitla",
         songs: [
-            { name: "Sairo Sairo", file: "Songs/Baadshah-SairoSairo.mp3" },
-            { name: "Diamond Girl", file: "Songs/Baadshah-DiamondGirl.mp3" },
-            { name: "Welcome Kanakku", file: "Songs/Baadshah-WelcomeKanakku.mp3" },
-            { name: "Banthi Poola Janaki", file: "Songs/Baadshah-BanthiPoolaJanaki.mp3" }
+            { name: "Sairo Sairo", file: "Songs/Sairo Sairo-Baadshah.mp3" },
+            { name: "Diamond Girl", file: "Songs/Diamond Girl-Baadshah.mp3" },
+            { name: "Welcome Kanakku", file: "Songs/Welcome Kanakam-Baadshah.mp3" },
+            { name: "Banthi Poola Janaki", file: "Songs/Banthi Poola Janaki-Baadshah.mp3" },
+            { name: "Baadshah", file: "Songs/Baadshah-Baadshah.mp3" },
+            { name: "Rangoli Rangoli", file: "Songs/Rangoli Rangoli-Baadshah.mp3" }
         ]
     },
     {
