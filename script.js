@@ -310,9 +310,11 @@ const movies = [
         year: 2015,
         director: "Puri Jagannadh",
         songs: [
-            { name: "Temper Title", file: "Songs/Temper-TemperTitle.mp3" },
-            { name: "Chingari", file: "Songs/Temper-Chingari.mp3" },
-            { name: "Ittage Rechhipodham", file: "Songs/Temper-IttageRechhipodham.mp3" }
+            { name: "Ittage Recchipodham", file: "Songs/Ittage Recchipodham-Temper.mp3" },
+            { name: "One More Time", file: "Songs/One More Time-Temper.mp3" },
+            { name: " Choolenge Aasma", file: "Songs/ChoolengeAasma-Temper.mp3" },
+             { name: " Temper", file: "Songs/Temper-Temper.mp3" },
+              { name: " Devudaa", file: "Songs/Devuda-Temper.mp3" }
         ]
     },
     {
