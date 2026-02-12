@@ -103,7 +103,7 @@ const movies = [
             { name: "Nairey Nairey", file: "Songs/Nairey Nairey.mp3" },
             { name: "Nipputunakai", file: "Songs/Nipputunakai.mp3" },
             { name: "Unga Unga", file: "Songs/UngaUnga.mp3" }
-            
+
         ]
     },
     {
@@ -155,9 +155,9 @@ const movies = [
             { name: "Gola Gola", file: "Songs/Gola Gola-Ashok.mp3" },
             { name: "Jabiliki", file: "Songs/Jabiliki-Ashok.mp3" },
             { name: "Muntajmahalu", file: "Songs/Muntajmahalu-Ashok.mp3" },
-             { name: "Nuvvasalu.", file: "Songs/Nuvvasalu-Ashok.mp3" },
-              { name: "Okachinni", file: "Songs/Okachinni-Ashok.mp3" },
-               { name: "Yekantanga", file: "Songs/Yekantanga-Ashok.mp3" }
+            { name: "Nuvvasalu.", file: "Songs/Nuvvasalu-Ashok.mp3" },
+            { name: "Okachinni", file: "Songs/Okachinni-Ashok.mp3" },
+            { name: "Yekantanga", file: "Songs/Yekantanga-Ashok.mp3" }
         ]
     },
     {
@@ -171,7 +171,7 @@ const movies = [
             { name: " Rangu Rabba", file: "Songs/Rangu Rabba Rabba-Rakhi.mp3" },
             { name: " Vastava Vastava", file: "Songs/Vastava Vastava-Rakhi.mp3" },
             { name: " Zara Zara", file: "Songs/Zara Zara-Rakhi.mp3" }
-        
+
         ]
     },
     {
@@ -223,8 +223,8 @@ const movies = [
             { name: "Chinnadho", file: "Songs/Chinnadho-Brindavanam.mp3" },
             { name: "Oopirage", file: "Songs/Oopirage-Brindavanam.mp3" },
             { name: "Vachadura", file: "Songs/Vachadura-Brindavanam.mp3" }
-            
-            
+
+
         ]
     },
     {
@@ -254,13 +254,17 @@ const movies = [
         ]
     },
     {
-        title: "Dammu",
+        title: "Dhammu",
         year: 2012,
         director: "Boyapati Srinu",
         songs: [
-            { name: "Ruler", file: "Songs/Dammu-Ruler.mp3" },
-            { name: "Dillaku Dillaku", file: "Songs/Dammu-DillakuDillaku.mp3" },
-            { name: "Pataas Pilla", file: "Songs/Dammu-PataasPilla.mp3" }
+            { name: " Oh Lilli", file: "Songs/Oh Lilli-Dhammu.mp3" },
+            { name: "Raja Vasireddy", file: "Songs/Raja Vasireddy-Dhammu.mp3" },
+            { name: "Ruler", file: "Songs/Ruler-Dhammu.mp3" },
+            { name: "Dhammu", file: "Songs/Dhammu-Dhammu.mp3" },
+            { name: "Vaasthu Bagundhe", file: "Songs/Vaasthu Bagundhe-Dhammu.mp3" },
+
+
         ]
     },
     {
