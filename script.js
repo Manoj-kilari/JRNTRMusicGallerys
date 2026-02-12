@@ -315,7 +315,7 @@ const movies = [
         year: 2016,
         director: "Sukumar",
         songs: [
-            { name: "Nannaku Prematho Title", file: "Songs/NannakuPrematho-NannakuPremathoTitle.mp3" },
+            { name: "Nannaku Prematho ", file: "Songs/NannakuPrematho-NannakuPremathoTitle.mp3" },
             { name: "Follow Follow", file: "Songs/NannakuPrematho-FollowFollow.mp3" },
             { name: "Running Through", file: "Songs/NannakuPrematho-RunningThrough.mp3" },
             { name: "Poolamme Pilla", file: "Songs/NannakuPrematho-PoolammePilla.mp3" }
