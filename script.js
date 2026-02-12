@@ -298,9 +298,11 @@ const movies = [
         year: 2014,
         director: "Santosh Srinivas",
         songs: [
-            { name: "Rakasi Rakasi", file: "Songs/Rabhasa-RakasiRakasi.mp3" },
-            { name: "Ra Ra Rakasi", file: "Songs/Rabhasa-RaRaRakasi.mp3" },
-            { name: "Rabhasa Title", file: "Songs/Rabhasa-RabhasaTitle.mp3" }
+            { name: "Rakasi Rakasi", file: "Songs/Rakaasi Rakaasi-Rabhasa.mp3" },
+            { name: " Hawa Hawa", file: "Songs/Hawa Hawa-Rabhasa.mp3" },
+            { name: "Garam Garam Chilaka", file: "Songs/Garam Garam Chilaka-Rabhasa.mp3" },
+             { name: "Maar Salaam", file: "Songs/Maar Salaam-Rabhasa.mp3" },
+              { name: "Dam Damare", file: "Songs/Dam Damare-Rabhasa.mp3" }
         ]
     },
     {
