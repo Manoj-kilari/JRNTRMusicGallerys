@@ -285,9 +285,12 @@ const movies = [
         year: 2013,
         director: "Harish Shankar",
         songs: [
-            { name: "Jaadu", file: "Songs/RamayyaVasthavayya-Jaadu.mp3" },
-            { name: "Ennallako", file: "Songs/RamayyaVasthavayya-Ennallako.mp3" },
-            { name: "Rang De", file: "Songs/RamayyaVasthavayya-RangDe.mp3" }
+            { name: "O Lailaa", file: "Songs/O Lailaa-Ramayya Vasthavayya.mp3" },
+            { name: "Pandaga Chesko", file: "Songs/Pandaga Chesko-Ramayya Vasthavayya.mp3" },
+            { name: "Jabilli", file: "Songs/Jabilli-Ramayya Vasthavayya.mp3" },
+            { name: "Kurrayeedu", file: "Songs/Kurrayeedu-Ramayya Vasthavayya.mp3" },
+            { name: "Neneppudaina", file: "Songs/Neneppudaina-Ramayya Vasthavayya.mp3" },
+            { name: "Idhi Ranarangam", file: "Songs/Idhi Ranarangam-Ramayya Vasthavayya.mp3" }
         ]
     },
     {
