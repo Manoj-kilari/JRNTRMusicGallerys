@@ -349,10 +349,12 @@ const movies = [
         year: 2017,
         director: "Bobby",
         songs: [
-            { name: "Swing Zara", file: "Songs/JaiLavaKusa-SwingZara.mp3" },
-            { name: "Raavana", file: "Songs/JaiLavaKusa-Raavana.mp3" },
-            { name: "Nee Kallalona", file: "Songs/JaiLavaKusa-NeeKallalona.mp3" },
-            { name: "Enduko Emo", file: "Songs/JaiLavaKusa-EndukoEmo.mp3" }
+            { name: "Dochestha ", file: "Songs/Dochestha-Jai Lava Kusa.mp3" },
+            { name: "Tring Tring", file: "Songs/Tring Tring-Jai Lava Kusa.mp3" },
+            { name: "Nee Kallalona", file: "Songs/Nee Kallalona-Jai Lava Kusa.mp3" },
+             { name: " Raavana", file: "Songs/Raavana-Jai Lava Kusa.mp3" },
+            { name: " Andamaina Lokam", file: "Songs/Andamaina Lokam-Jai Lava Kusa.mp3" },
+            { name: " Swing Zara", file: "Songs/Swing Zara-Jai Lava Kusa.mp3" }
         ]
     },
     {
