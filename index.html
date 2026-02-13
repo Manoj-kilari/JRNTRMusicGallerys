@@ -9,109 +9,148 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="grain"></div>
-    
-    <div class="container">
-        <header>
-            <h1 class="hero-title">JR NTR</h1>
-            <p class="subtitle">Music Gallery</p>
-            <p class="tagline">Man of Masses · 30+ Films · Epic Journey</p>
-        </header>
-
-     
-
-        <div class="stats-banner">
-            <h3>FILMOGRAPHY STATS</h3>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" id="totalMovies">30+</div>
-                    <div class="stat-label">Total Films</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">25</div>
-                    <div class="stat-label">Years in Cinema</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">150+</div>
-                    <div class="stat-label">Hit Songs</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">2001-2024</div>
-                    <div class="stat-label">Era</div>
+     <!-- Navigation Bar -->
+     <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <span class="logo-icon">🎵</span>
+                <span class="logo-text">JR NTR Music</span>
+            </div>
+            <div class="nav-center">
+                <button class="nav-btn active">Library</button>
+                <button class="nav-btn">Browse</button>
+                <button class="nav-btn">Search</button>
+            </div>
+            <div class="user-badge" id="userBadge">
+                <span>👤</span>
+                <span class="user-name">Manoj Kilari</span>
+                <div class="user-menu" id="userMenu">
+                    <div class="user-menu-item">
+                        <strong>Manoj Kilari</strong>
+                    </div>
+                    <div class="user-menu-divider"></div>
+                    <div class="user-menu-item">Account Settings</div>
+                    <div class="user-menu-item">Preferences</div>
+                    <div class="user-menu-item">My Playlists</div>
+                    <div class="user-menu-divider"></div>
+                    <div class="user-menu-item">Sign Out</div>
                 </div>
             </div>
         </div>
+    </nav>
 
-        <div class="filter-controls">
-            <button class="filter-btn active" data-decade="all">All Movies</button>
-            <button class="filter-btn" data-decade="2001-2005">2001-2005</button>
-            <button class="filter-btn" data-decade="2006-2010">2006-2010</button>
-            <button class="filter-btn" data-decade="2011-2015">2011-2015</button>
-            <button class="filter-btn" data-decade="2016-2020">2016-2020</button>
-            <button class="filter-btn" data-decade="2021-2024">2021-2024</button>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">JR NTR</h1>
+                <p class="hero-subtitle">Young Tiger · 30+ Films · 150+ Songs</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="playAll()">
+                        <span>▶</span>
+                        Play All
+                    </button>
+                    <button class="btn-secondary" onclick="shufflePlay()">
+                        <span>🔀</span>
+                        Shuffle
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <div class="filter-scroll">
+                <button class="filter-chip active" data-decade="all">All Movies</button>
+                <button class="filter-chip" data-decade="2001-2005">2001-2005</button>
+                <button class="filter-chip" data-decade="2006-2010">2006-2010</button>
+                <button class="filter-chip" data-decade="2011-2015">2011-2015</button>
+                <button class="filter-chip" data-decade="2016-2020">2016-2020</button>
+                <button class="filter-chip" data-decade="2021-2024">2021-2024</button>
+            </div>
         </div>
 
-        <div class="search-box">
-            <input type="text" class="search-input" placeholder="Search movies or songs..." id="searchInput">
-            <span class="search-icon">🔍</span>
+        <!-- Search Box -->
+        <div class="search-container">
+            <div class="search-box">
+                <span>🔍</span>
+                <input type="text" class="search-input" placeholder="Search songs, movies..." id="searchInput">
+                <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+            </div>
         </div>
 
-        <div class="movies-grid" id="moviesGrid">
-            <!-- Movies will be loaded here -->
+        <!-- Albums Grid -->
+        <div class="albums-section" id="albumsSection">
+            <h2 class="section-title">Albums</h2>
+            <div class="albums-grid" id="albumsGrid"></div>
+            <div class="no-results hidden" id="noAlbumsResults">
+                <div class="no-results-icon">🎬</div>
+                <div class="no-results-title">No albums found</div>
+                <div class="no-results-text">Try searching for a different movie</div>
+            </div>
         </div>
 
-        <div class="loading" id="loading">Loading Jr NTR's Musical Journey...</div>
-    </div>
+        <!-- Songs List -->
+        <div class="songs-section" id="songsSection">
+            <h2 class="section-title">All Songs</h2>
+            <div class="songs-list" id="songsList"></div>
+            <div class="no-results hidden" id="noSongsResults">
+                <div class="no-results-icon">🎵</div>
+                <div class="no-results-title">No songs found</div>
+                <div class="no-results-text">Try searching for a different song or movie</div>
+            </div>
+        </div>
+    </main>
 
-    <div class="now-playing" id="nowPlaying">
-        <div class="player-content">
+    <!-- Music Player -->
+    <div class="music-player" id="musicPlayer">
+        <div class="player-container">
+            <div class="player-album-art" id="playerAlbumArt">
+                <div class="album-art-placeholder">🎵</div>
+            </div>
+
             <div class="player-info">
-                <div class="player-song" id="playerSong">Song Name</div>
-                <div class="player-movie" id="playerMovie">Movie Name (Year)</div>
+                <div class="player-song-name" id="playerSongName">Song Title</div>
+                <div class="player-artist" id="playerArtist">Movie · Jr NTR</div>
             </div>
-            <div class="progress-container">
-                <span class="time" id="currentTime">0:00</span>
-                <div class="progress-bar" id="progressBar" onclick="seekSong(event)">
-                </div>
-                <span class="time" id="duration">0:00</span>
-            </div>
+
             <div class="player-controls">
-                <button class="control-btn" onclick="previousSong()" title="Previous">⏮</button>
-                <button class="control-btn play-pause" onclick="togglePlay()" id="playPauseBtn" title="Play/Pause">▶</button>
-                <button class="control-btn" onclick="nextSong()" title="Next">⏭</button>
-                <div class="volume-control">
-                    <span style="color: var(--gold);">🔊</span>
-                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70">
+                <button class="control-btn" onclick="previousSong()">⏮</button>
+                <button class="control-play" onclick="togglePlay()" id="playBtn">▶</button>
+                <button class="control-btn" onclick="nextSong()">⏭</button>
+            </div>
+
+            <div class="player-progress">
+                <span class="time-current" id="currentTime">0:00</span>
+                <div class="progress-track" onclick="seekSong(event)">
+                    <div class="progress-fill" id="progressFill"></div>
                 </div>
-                <button class="control-btn close-player" onclick="closePlayer()" title="Close">✕</button>
+                <span class="time-duration" id="duration">0:00</span>
+            </div>
+
+            <div class="player-actions">
+                <div class="volume-control">
+                    <div class="volume-icon" id="volumeIcon" onclick="toggleMute()">🔊</div>
+                    <div class="volume-slider-container" id="volumeSliderContainer">
+                        <div class="volume-slider-fill" id="volumeSliderFill"></div>
+                        <div class="volume-slider-thumb" id="volumeSliderThumb"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-  <footer class="fan-footer">
-        <div class="footer-content">
-            <div class="heart-icon">❤️</div>
-            <div class="fan-message">
-                <p class="fan-name">Created with Love by <span class="creator-name">Manoj Kilari</span></p>
-                <p class="fan-tagline">Tarak Anna Biggest Fan 🔥</p>
-                <p class="fan-emotion">"From the first frame to every beat, Young Tiger NTR's energy runs through my veins. This gallery is a humble tribute to the Man of Masses who redefined mass cinema!"</p>
-                <div class="fan-badges">
-                    <span class="badge">🐅 Young Tiger Forever</span>
-                    <span class="badge">⚡ NTR Fan Since Day 1</span>
-                    <span class="badge">🎬 30+ Films, Infinite Memories</span>
-                </div>
-            </div>
-            <div class="footer-quote">
-                <p class="quote-text">"One man, thousand emotions, million hearts"</p>
-                <p class="quote-author">— Every NTR Fan</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>⭐ Celebrating the Legacy of Jr NTR ⭐</p>
-            <p class="year-range">2001 - Forever | #YoungTiger #ManOfMasses</p>
-        </div>
-    </footer>
+
+    <!-- Audio Element -->
     <audio id="audioPlayer" preload="metadata"></audio>
 
+    <!-- Loading -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p style="margin-top: 20px; color: #98989D;">Loading Jr NTR's Musical Journey...</p>
+    </div>
   <script src="./script.js"></script>
 </body>
 </html>
