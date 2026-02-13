@@ -285,9 +285,12 @@ const movies = [
         year: 2013,
         director: "Harish Shankar",
         songs: [
-            { name: "Jaadu", file: "Songs/RamayyaVasthavayya-Jaadu.mp3" },
-            { name: "Ennallako", file: "Songs/RamayyaVasthavayya-Ennallako.mp3" },
-            { name: "Rang De", file: "Songs/RamayyaVasthavayya-RangDe.mp3" }
+            { name: "O Lailaa", file: "Songs/O Lailaa-Ramayya Vasthavayya.mp3" },
+            { name: "Pandaga Chesko", file: "Songs/Pandaga Chesko-Ramayya Vasthavayya.mp3" },
+            { name: "Jabilli", file: "Songs/Jabilli-Ramayya Vasthavayya.mp3" },
+            { name: "Kurrayeedu", file: "Songs/Kurrayeedu-Ramayya Vasthavayya.mp3" },
+            { name: "Neneppudaina", file: "Songs/Neneppudaina-Ramayya Vasthavayya.mp3" },
+            { name: "Idhi Ranarangam", file: "Songs/Idhi Ranarangam-Ramayya Vasthavayya.mp3" }
         ]
     },
     {
@@ -295,9 +298,11 @@ const movies = [
         year: 2014,
         director: "Santosh Srinivas",
         songs: [
-            { name: "Rakasi Rakasi", file: "Songs/Rabhasa-RakasiRakasi.mp3" },
-            { name: "Ra Ra Rakasi", file: "Songs/Rabhasa-RaRaRakasi.mp3" },
-            { name: "Rabhasa Title", file: "Songs/Rabhasa-RabhasaTitle.mp3" }
+            { name: "Rakasi Rakasi", file: "Songs/Rakaasi Rakaasi-Rabhasa.mp3" },
+            { name: " Hawa Hawa", file: "Songs/Hawa Hawa-Rabhasa.mp3" },
+            { name: "Garam Garam Chilaka", file: "Songs/Garam Garam Chilaka-Rabhasa.mp3" },
+             { name: "Maar Salaam", file: "Songs/Maar Salaam-Rabhasa.mp3" },
+              { name: "Dam Damare", file: "Songs/Dam Damare-Rabhasa.mp3" }
         ]
     },
     {
@@ -305,9 +310,11 @@ const movies = [
         year: 2015,
         director: "Puri Jagannadh",
         songs: [
-            { name: "Temper Title", file: "Songs/Temper-TemperTitle.mp3" },
-            { name: "Chingari", file: "Songs/Temper-Chingari.mp3" },
-            { name: "Ittage Rechhipodham", file: "Songs/Temper-IttageRechhipodham.mp3" }
+            { name: "Ittage Recchipodham", file: "Songs/Ittage Recchipodham-Temper.mp3" },
+            { name: "One More Time", file: "Songs/One More Time-Temper.mp3" },
+            { name: " Choolenge Aasma", file: "Songs/ChoolengeAasma-Temper.mp3" },
+             { name: " Temper", file: "Songs/Temper-Temper.mp3" },
+              { name: " Devudaa", file: "Songs/Devuda-Temper.mp3" }
         ]
     },
     {
