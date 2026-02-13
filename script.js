@@ -327,7 +327,7 @@ const movies = [
             { name: "Naa Manasu Neelo", file: "Songs/2-Naa Manasu Nannaku Prematho.mp3" },
             { name: "Love Me Again", file: "Songs/4-Love Me Again-Nannaku Prematho.mp3" },
             { name: " Love Dhebba", file: "Songs/5-Love Dhebba-Nannaku Prematho.mp3" },
-            { name: "  Nannaku Title", file: "Songs/6-Nannaku-Nannaku Prematho.mp3" }
+            { name: "Nannaku Title", file: "Songs/6-Nannaku-Nannaku Prematho.mp3" }
         ]
     },
     {
