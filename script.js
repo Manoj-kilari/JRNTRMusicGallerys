@@ -322,10 +322,12 @@ const movies = [
         year: 2016,
         director: "Sukumar",
         songs: [
-            { name: "Nannaku Prematho Title", file: "Songs/NannakuPrematho-NannakuPremathoTitle.mp3" },
-            { name: "Follow Follow", file: "Songs/NannakuPrematho-FollowFollow.mp3" },
-            { name: "Running Through", file: "Songs/NannakuPrematho-RunningThrough.mp3" },
-            { name: "Poolamme Pilla", file: "Songs/NannakuPrematho-PoolammePilla.mp3" }
+            { name: " Don’t Stop", file: "Songs/3- Dont Stop-Nannaku Prematho.mp3" },
+            { name: "Follow Follow", file: "Songs/1- Follow Follow-Nannaku Prematho.mp3" },
+            { name: "Naa Manasu Neelo", file: "Songs/2-Naa Manasu Nannaku Prematho.mp3" },
+            { name: "Love Me Again", file: "Songs/4-Love Me Again-Nannaku Prematho.mp3" },
+            { name: " Love Dhebba", file: "Songs/5-Love Dhebba-Nannaku Prematho.mp3" },
+            { name: "  Nannaku Title", file: "Songs/6-Nannaku-Nannaku Prematho.mp3" }
         ]
     },
     {
@@ -333,9 +335,12 @@ const movies = [
         year: 2016,
         director: "Koratala Siva",
         songs: [
-            { name: "Jayaho Janatha", file: "Songs/JanathaGarage-JayahoJanatha.mp3" },
-            { name: "Pakka Local", file: "Songs/JanathaGarage-PakkaLocal.mp3" },
-            { name: "Pranaamam", file: "Songs/JanathaGarage-Pranaamam.mp3" }
+            { name: "Pranaamam", file: "Songs/Pranaamam  -Janatha Garage.mp3" },
+            { name: " Rock On Bro", file: "Songs/Rock On Bro  - Janatha Garage.mp3" },
+            { name: "Apple Beauty ", file: "Songs/Apple Beauty  - Janatha Garage.mp3" },
+            { name: " Nee Selvadigi", file: "Songs/Nee Selavdigi  -Janatha Garage.mp3" },
+            { name: "Jayaho Janatha ", file: "Songs/Jayaho Janatha  - Janatha Garage.mp3" },
+            { name: "Pakka Local ", file: "Songs/Pakka Local  - Janatha Garage.mp3" }
         ]
     },
     {
