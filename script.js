@@ -322,10 +322,12 @@ const movies = [
         year: 2016,
         director: "Sukumar",
         songs: [
-            { name: "Nannaku Prematho ", file: "Songs/NannakuPrematho-NannakuPremathoTitle.mp3" },
-            { name: "Follow Follow", file: "Songs/NannakuPrematho-FollowFollow.mp3" },
-            { name: "Running Through", file: "Songs/NannakuPrematho-RunningThrough.mp3" },
-            { name: "Poolamme Pilla", file: "Songs/NannakuPrematho-PoolammePilla.mp3" }
+            { name: " Don’t Stop", file: "Songs/3- Dont Stop-Nannaku Prematho.mp3" },
+            { name: "Follow Follow", file: "Songs/1- Follow Follow-Nannaku Prematho.mp3" },
+            { name: "Naa Manasu Neelo", file: "Songs/2-Naa Manasu Nannaku Prematho.mp3" },
+            { name: "Love Me Again", file: "Songs/4-Love Me Again-Nannaku Prematho.mp3" },
+            { name: " Love Dhebba", file: "Songs/5-Love Dhebba-Nannaku Prematho.mp3" },
+            { name: "  Nannaku Title", file: "Songs/6-Nannaku-Nannaku Prematho.mp3" }
         ]
     },
     {
