@@ -335,12 +335,13 @@ const movies = [
         year: 2016,
         director: "Koratala Siva",
         songs: [
-            { name: "Pranaamam", file: "Songs/Pranaamam  -Janatha Garage.mp3" },
+            { name: "Pranaamam", file: "Songs/Pranaamam  - Janatha Garage.mp3" },
             { name: " Rock On Bro", file: "Songs/Rock On Bro  - Janatha Garage.mp3" },
             { name: "Apple Beauty ", file: "Songs/Apple Beauty  - Janatha Garage.mp3" },
-            { name: " Nee Selvadigi", file: "Songs/Nee Selavdigi  -Janatha Garage.mp3" },
+            { name: " Nee Selvadigi", file: "Songs/Nee Selavdigi  - Janatha Garage.mp3" },
             { name: "Jayaho Janatha ", file: "Songs/Jayaho Janatha  - Janatha Garage.mp3" },
             { name: "Pakka Local ", file: "Songs/Pakka Local  - Janatha Garage.mp3" }
+          
         ]
     },
     {
