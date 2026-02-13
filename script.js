@@ -377,11 +377,12 @@ const movies = [
         year: 2022,
         director: "S.S. Rajamouli",
         songs: [
-            { name: "Naatu Naatu", file: "Songs/RRR-NaatuNaatu.mp3" },
-            { name: "Komuram Bheemudo", file: "Songs/RRR-KomuramBheemudo.mp3" },
-            { name: "Dosti", file: "Songs/RRR-Dosti.mp3" },
-            { name: "Etthara Jenda", file: "Songs/RRR-EttharaJenda.mp3" },
-            { name: "Raamam Raaghavam", file: "Songs/RRR-RaamamRaaghavam.mp3" }
+            { name: "Dosti", file: "Songs/Dosti - RRR.mp3" },
+            { name: "Naatu Naatu", file: "Songs/Nattu Nattu- RRR.mp3" },
+            { name: "Komuram Bheemudo", file: "Songs/Komuram Bheemudo- RRR.mp3" },
+            { name: "Etthara Jenda", file: "Songs/Etthara Jenda- RRR.mp3" },
+            { name: "Komma Uyyala", file: "Songs/Komma Uyyala- RRR.mp3" },
+              { name: "Janani", file: "Songs/Janani - RRR.mp3" }
         ]
     },
     {
@@ -389,10 +390,14 @@ const movies = [
         year: 2024,
         director: "Koratala Siva",
         songs: [
-            { name: "Fear Song", file: "Songs/Devara-FearSong.mp3" },
-            { name: "Chuttamalle", file: "Songs/Devara-Chuttamalle.mp3" },
-            { name: "Daavudi", file: "Songs/Devara-Dheevara.mp3" },
-            { name: "Ayudha Pooja", file: "Songs/Devara-AyudhaPooja.mp3" }
+            { name: "Ayudha Pooja", file: "Songs/Ayudha Pooja - Devara.mp3" },
+            { name: "Fear Song", file: "Songs/Fear - Devara.mp3" },
+            { name: "Chuttamalle", file: "Songs/Chuttamalle - Devara.mp3" },
+            { name: "Daavudi", file: "Songs/Daavudi - Devara.mp3" },
+            { name: "All Hail The Tiger", file: "Songs/All Hail The Tiger - Devara.mp3" },
+            // { name: "RED Sea", file: "Songs/Red Sea - Devara.mp3" },
+             { name: " Devara Thandavam", file: "Songs/Devara Thandavam - Devara.mp3" }
+
         ]
     }
 ];
