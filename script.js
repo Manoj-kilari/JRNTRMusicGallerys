@@ -301,8 +301,8 @@ const movies = [
             { name: "Rakasi Rakasi", file: "Songs/Rakaasi Rakaasi-Rabhasa.mp3" },
             { name: " Hawa Hawa", file: "Songs/Hawa Hawa-Rabhasa.mp3" },
             { name: "Garam Garam Chilaka", file: "Songs/Garam Garam Chilaka-Rabhasa.mp3" },
-             { name: "Maar Salaam", file: "Songs/Maar Salaam-Rabhasa.mp3" },
-              { name: "Dam Damare", file: "Songs/Dam Damare-Rabhasa.mp3" }
+            { name: "Maar Salaam", file: "Songs/Maar Salaam-Rabhasa.mp3" },
+            { name: "Dam Damare", file: "Songs/Dam Damare-Rabhasa.mp3" }
         ]
     },
     {
@@ -313,8 +313,8 @@ const movies = [
             { name: "Ittage Recchipodham", file: "Songs/Ittage Recchipodham-Temper.mp3" },
             { name: "One More Time", file: "Songs/One More Time-Temper.mp3" },
             { name: " Choolenge Aasma", file: "Songs/ChoolengeAasma-Temper.mp3" },
-             { name: " Temper", file: "Songs/Temper-Temper.mp3" },
-              { name: " Devudaa", file: "Songs/Devuda-Temper.mp3" }
+            { name: " Temper", file: "Songs/Temper-Temper.mp3" },
+            { name: " Devudaa", file: "Songs/Devuda-Temper.mp3" }
         ]
     },
     {
@@ -341,7 +341,7 @@ const movies = [
             { name: " Nee Selvadigi", file: "Songs/Nee Selavdigi  - Janatha Garage.mp3" },
             { name: "Jayaho Janatha ", file: "Songs/Jayaho Janatha  - Janatha Garage.mp3" },
             { name: "Pakka Local ", file: "Songs/Pakka Local  - Janatha Garage.mp3" }
-          
+
         ]
     },
     {
@@ -352,7 +352,7 @@ const movies = [
             { name: "Dochestha ", file: "Songs/Dochestha-Jai Lava Kusa.mp3" },
             { name: "Tring Tring", file: "Songs/Tring Tring-Jai Lava Kusa.mp3" },
             { name: "Nee Kallalona", file: "Songs/Nee Kallalona-Jai Lava Kusa.mp3" },
-             { name: " Raavana", file: "Songs/Raavana-Jai Lava Kusa.mp3" },
+            { name: " Raavana", file: "Songs/Raavana-Jai Lava Kusa.mp3" },
             { name: " Andamaina Lokam", file: "Songs/Andamaina Lokam-Jai Lava Kusa.mp3" },
             { name: " Swing Zara", file: "Songs/Swing Zara-Jai Lava Kusa.mp3" }
         ]
@@ -362,10 +362,14 @@ const movies = [
         year: 2018,
         director: "Trivikram Srinivas",
         songs: [
-            { name: "Anaganaganaga", file: "Songs/AravindaSametha-Anaganaganaga.mp3" },
-            { name: "Peniviti", file: "Songs/AravindaSametha-Peniviti.mp3" },
-            { name: "Reddy Ikkada Soodu", file: "Songs/AravindaSametha-ReddyIkkadaSoodu.mp3" },
-            { name: "Yedalo Yedalo", file: "Songs/AravindaSametha-YedaloYedalo.mp3" }
+            { name: "Yeda Poyindo", file: "Songs/Yeda Poyindo - Aravinda Sametha Veera Raghava.mp3" },
+            { name: "AnaganagAnaga", file: "Songs/Anaganaganaga - Aravinda Sametha Veera Raghava.mp3" },
+            { name: "Peniviti", file: "Songs/Peniviti - Aravinda Sametha Veera Raghava.mp3" },
+            { name: "Reddy Ikkada Soodu", file: "Songs/Reddy Ikkada Soodu - Aravinda Sametha Veera Raghava.mp3" },
+            { name: "Reddamma Thalli – Penchal Das", file: "Songs/Reddamma Thalli - Aravinda Sametha Veera Raghava.mp3" },
+            { name: "Reddemma Thalli (Female) ", file: "Songs/Reddamma Thalli (Female) - Aravinda Sametha Veera Raghava.mp3" }
+
+
         ]
     },
     {
