@@ -9,18 +9,17 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-     <!-- Navigation Bar -->
-     <!-- Navigation Bar -->
+       <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-content">
             <div class="logo">
                 <span class="logo-icon">🎵</span>
                 <span class="logo-text">JR NTR Music</span>
             </div>
-            <div class="nav-center">
-                <button class="nav-btn active">Library</button>
-                <button class="nav-btn">Browse</button>
-                <button class="nav-btn">Search</button>
+            <div class="nav-center" id="navCenter">
+                <button class="nav-btn" data-view="library">Library</button>
+                <button class="nav-btn" data-view="gallery">Gallery</button>
+                <button class="nav-btn" data-view="search">Search</button>
             </div>
             <div class="user-badge" id="userBadge">
                 <span>👤</span>
@@ -82,26 +81,35 @@
             </div>
         </div>
 
-        <!-- Albums Grid -->
-        <div class="albums-section" id="albumsSection">
-            <h2 class="section-title">Albums</h2>
-            <div class="albums-grid" id="albumsGrid"></div>
-            <div class="no-results hidden" id="noAlbumsResults">
-                <div class="no-results-icon">🎬</div>
-                <div class="no-results-title">No albums found</div>
-                <div class="no-results-text">Try searching for a different movie</div>
+        <!-- Library View -->
+        <div id="libraryView">
+            <!-- Albums Grid -->
+            <div class="albums-section" id="albumsSection">
+                <h2 class="section-title">Albums</h2>
+                <div class="albums-grid" id="albumsGrid"></div>
+                <div class="no-results hidden" id="noAlbumsResults">
+                    <div class="no-results-icon">🎬</div>
+                    <div class="no-results-title">No albums found</div>
+                    <div class="no-results-text">Try searching for a different movie</div>
+                </div>
+            </div>
+
+            <!-- Songs List -->
+            <div class="songs-section" id="songsSection">
+                <h2 class="section-title">All Songs</h2>
+                <div class="songs-list" id="songsList"></div>
+                <div class="no-results hidden" id="noSongsResults">
+                    <div class="no-results-icon">🎵</div>
+                    <div class="no-results-title">No songs found</div>
+                    <div class="no-results-text">Try searching for a different song or movie</div>
+                </div>
             </div>
         </div>
 
-        <!-- Songs List -->
-        <div class="songs-section" id="songsSection">
-            <h2 class="section-title">All Songs</h2>
-            <div class="songs-list" id="songsList"></div>
-            <div class="no-results hidden" id="noSongsResults">
-                <div class="no-results-icon">🎵</div>
-                <div class="no-results-title">No songs found</div>
-                <div class="no-results-text">Try searching for a different song or movie</div>
-            </div>
+        <!-- Gallery View -->
+        <div id="galleryView" class="hidden">
+            <h2 class="section-title">Photo Gallery</h2>
+            <div class="gallery-grid" id="galleryGrid"></div>
         </div>
     </main>
 
@@ -139,6 +147,25 @@
                         <div class="volume-slider-thumb" id="volumeSliderThumb"></div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox for Gallery -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <div class="lightbox-image-container">
+                <img class="lightbox-poster" id="lightboxPoster" src="" alt="Movie Poster">
+                <div style="position: relative;">
+                    <button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation(); navigateLightbox(-1)">‹</button>
+                    <img class="lightbox-image" id="lightboxImage" src="" alt="">
+                    <button class="lightbox-nav lightbox-next" onclick="event.stopPropagation(); navigateLightbox(1)">›</button>
+                </div>
+            </div>
+            <div class="lightbox-info">
+                <div class="lightbox-title" id="lightboxTitle"></div>
+                <div class="lightbox-counter" id="lightboxCounter"></div>
             </div>
         </div>
     </div>
