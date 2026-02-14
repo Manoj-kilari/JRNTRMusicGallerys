@@ -1,4 +1,4 @@
-
+  
         // Jr NTR Music Gallery - Apple Music Style JavaScript
 
 // Complete Jr NTR Filmography with Popular Songs and Gallery Images
@@ -24,7 +24,7 @@ const movies = [
         title: "Student No. 1",
         year: 2001,
         director: "S.S. Rajamouli",
-        poster: "posters/studentno1.jpeg",
+        poster: "posters/studentno1.jpg",
         gallery: [
             "gallery/student-no-1-1.jpg",
             "gallery/student-no-1-2.jpg",
@@ -608,7 +608,7 @@ const movies = [
 
         ]
     },
-      {
+    {
         title: "NTRNEEL 1",
         year: 2027,
         director: "Prashanth Neel",

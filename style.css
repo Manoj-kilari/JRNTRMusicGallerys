@@ -1,4 +1,5 @@
- /* Import Font */
+
+        /* Import Font */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
         
         /* Apple Music Design for Jr NTR Music Gallery */
@@ -1138,38 +1139,60 @@
                 min-width: 120px; 
             }
 
-            /* Lightbox - Apple Music Style: Large Centered Poster */
+            /* Lightbox - Mobile Optimized with Slides */
             .lightbox-content {
                 gap: 20px;
                 padding: 20px;
             }
 
             .lightbox-image-container {
-                flex-direction: column;
+                flex-direction: row;
                 gap: 0;
                 align-items: center;
+                justify-content: center;
                 width: 100%;
+                position: relative;
             }
 
-            /* Large centered poster like Apple Music */
-            .lightbox-poster {
-                width: 85vw;
-                max-width: 400px;
-                height: auto;
-                display: block !important;
-                border-radius: 16px;
-                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-                margin-bottom: 0;
-            }
-
-            /* Hide gallery image on mobile, show only poster */
+            /* Gallery image - main slide */
             .lightbox-image {
-                display: none;
+                display: block !important;
+                max-width: 85vw;
+                max-height: 60vh;
+                width: auto;
+                height: auto;
+                border-radius: 12px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
             }
 
-            /* Hide navigation arrows on mobile */
+            /* Movie poster - hide on mobile to focus on gallery slides */
+            .lightbox-poster {
+                display: none !important;
+            }
+
+            /* Show navigation arrows on mobile */
             .lightbox-nav {
-                display: none;
+                display: flex !important;
+                position: absolute;
+                width: 45px;
+                height: 45px;
+                font-size: 1.8rem;
+                background: rgba(0, 0, 0, 0.6);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+
+            .lightbox-nav:active {
+                background: rgba(0, 0, 0, 0.8);
+                transform: translateY(-50%) scale(0.9);
             }
 
             .lightbox-info {
@@ -1376,7 +1399,7 @@
                 min-width: 100px;
             }
 
-            /* Lightbox - Apple Music Style */
+            /* Lightbox - Mobile with Slides */
             .lightbox {
                 padding: 20px 15px;
                 background: rgba(0, 0, 0, 0.98);
@@ -1388,23 +1411,32 @@
             }
 
             .lightbox-image-container {
-                flex-direction: column;
+                flex-direction: row;
                 gap: 0;
+                position: relative;
             }
 
-            /* Large centered poster */
-            .lightbox-poster {
-                width: 90vw;
-                max-width: 380px;
-                max-height: 60vh;
-                display: block !important;
-                border-radius: 12px;
-                object-fit: cover;
-            }
-
-            /* Hide gallery images and navigation on mobile */
+            /* Gallery image visible on mobile */
             .lightbox-image {
-                display: none;
+                display: block !important;
+                max-width: 90vw;
+                max-height: 60vh;
+                width: auto;
+                height: auto;
+                border-radius: 12px;
+                object-fit: contain;
+            }
+
+            /* Hide poster, keep navigation */
+            .lightbox-poster {
+                display: none !important;
+            }
+
+            .lightbox-nav {
+                display: flex !important;
+                width: 44px;
+                height: 44px;
+                font-size: 1.6rem;
             }
 
             .lightbox-close {
@@ -1479,11 +1511,14 @@
                 font-size: 1.2rem;
             }
 
-            /* Large centered poster for smallest screens */
-            .lightbox-poster {
-                width: 85vw;
-                max-width: 300px;
-                max-height: 50vh;
+            /* Gallery slides for smallest screens */
+            .lightbox-image {
                 display: block !important;
+                max-width: 85vw;
+                max-height: 50vh;
+            }
+            
+            .lightbox-poster {
+                display: none !important;
             }
         }
