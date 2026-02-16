@@ -620,7 +620,7 @@ const movies = [
             "gallery/ntrneel-4.jpg"
         ],
         songs: [
-            { name: "NTR IN RAVI BASRUR", file: "Songs/NTR IN BASRUR - NTRNEEL 1.mp3" },
+            { name: "NTR IN RAVI BASRUR", file: "Songs/NTR IN BASRUR - NTRNEEL 1.mp3.mp3" },
          
 
         ]
