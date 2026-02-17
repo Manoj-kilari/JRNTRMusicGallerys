@@ -1,4 +1,5 @@
  
+        
         // ══════════════════════════════════════════
         //  MOVIE DATA
         // ══════════════════════════════════════════
@@ -32,18 +33,19 @@
             { title: "Jai Lava Kusa", year: 2017, director: "Bobby", poster: "posters/jai-lava-kusa.jpg", gallery: ["gallery/jai-lava-kusa-1.jpg", "gallery/jai-lava-kusa-2.jpg", "gallery/jai-lava-kusa-3.jpg", "gallery/jai-lava-kusa-4.jpg"], songs: [{ name: "Dochestha", file: "Songs/Dochestha-Jai Lava Kusa.mp3" }, { name: "Tring Tring", file: "Songs/Tring Tring-Jai Lava Kusa.mp3" }, { name: "Nee Kallalona", file: "Songs/Nee Kallalona-Jai Lava Kusa.mp3" }, { name: "Raavana", file: "Songs/Raavana-Jai Lava Kusa.mp3" }, { name: "Andamaina Lokam", file: "Songs/Andamaina Lokam-Jai Lava Kusa.mp3" }, { name: "Swing Zara", file: "Songs/Swing Zara-Jai Lava Kusa.mp3" }] },
             { title: "Aravinda Sametha", year: 2018, director: "Trivikram Srinivas", poster: "posters/aravinda-sametha.jpg", gallery: ["gallery/aravinda-sametha-1.jpg", "gallery/aravinda-sametha-2.jpg", "gallery/aravinda-sametha-3.jpg", "gallery/aravinda-sametha-4.jpg"], songs: [{ name: "Yeda Poyindo", file: "Songs/Yeda Poyindo - Aravinda Sametha Veera Raghava.mp3" }, { name: "AnaganagAnaga", file: "Songs/Anaganaganaga - Aravinda Sametha Veera Raghava.mp3" }, { name: "Peniviti", file: "Songs/Peniviti - Aravinda Sametha Veera Raghava.mp3" }, { name: "Reddy Ikkada Soodu", file: "Songs/Reddy Ikkada Soodu - Aravinda Sametha Veera Raghava.mp3" }, { name: "Reddamma Thalli", file: "Songs/Reddamma Thalli - Aravinda Sametha Veera Raghava.mp3" }, { name: "Reddemma Thalli (Female)", file: "Songs/Reddamma Thalli (Female) - Aravinda Sametha Veera Raghava.mp3" }] },
             { title: "RRR", year: 2022, director: "S.S. Rajamouli", poster: "posters/rrr.jpg", gallery: ["gallery/rrr-1.jpg", "gallery/rrr-2.jpg", "gallery/rrr-3.jpg", "gallery/rrr-4.jpg"], songs: [{ name: "Dosti", file: "Songs/Dosti - RRR.mp3" }, { name: "Naatu Naatu", file: "Songs/Nattu Nattu- RRR.mp3" }, { name: "Komuram Bheemudo", file: "Songs/Komuram Bheemudo- RRR.mp3" }, { name: "Etthara Jenda", file: "Songs/Etthara Jenda- RRR.mp3" }, { name: "Komma Uyyala", file: "Songs/Komma Uyyala- RRR.mp3" }, { name: "Janani", file: "Songs/Janani - RRR.mp3" }] },
-            { title: "Devara Part 1", year: 2024, director: "Koratala Siva", poster: "posters/devara.jpg", gallery: ["gallery/devara-1.jpg", "gallery/devara-2.jpg", "gallery/devara-3.jpg", "gallery/devara-4.jpg"], songs: [{ name: "Ayudha Pooja", file: "Songs/Ayudha Pooja - Devara.mp3" }, { name: "Fear Song", file: "Songs/Fear - Devara.mp3" }, { name: "Chuttamalle", file: "Songs/Chuttamalle - Devara.mp3" }, { name: "Daavudi", file: "Songs/Daavudi - Devara.mp3" }, { name: "All Hail The Tiger", file: "Songs/All Hail The Tiger - Devara.mp3" }, { name: "Devara Thandavam", file: "Songs/Devara Thandavam - Devara.mp3" }] }
+            { title: "Devara Part 1", year: 2024, director: "Koratala Siva", poster: "posters/devara.jpg", gallery: ["gallery/devara-1.jpg", "gallery/devara-2.jpg", "gallery/devara-3.jpg", "gallery/devara-4.jpg"], songs: [{ name: "Ayudha Pooja", file: "Songs/Ayudha Pooja - Devara.mp3" }, { name: "Fear Song", file: "Songs/Fear - Devara.mp3" }, { name: "Chuttamalle", file: "Songs/Chuttamalle - Devara.mp3" }, { name: "Daavudi", file: "Songs/Daavudi - Devara.mp3" }, { name: "All Hail The Tiger", file: "Songs/All Hail The Tiger - Devara.mp3" }, { name: "Devara Thandavam", file: "Songs/Devara Thandavam - Devara.mp3" }] },
+             { title: "NTRNEEL", year: 2027, director: "Prashanth Neel", poster: "posters/ntrneel-1.jpg", gallery: ["gallery/ntrneel-1.jpg", "gallery/ntrneel-2.jpg", "gallery/ntrneel-3.jpg", "gallery/ntrneel-4.jpg"], songs: [{ name: "NTR IN BASRUR ", file: "Songs/NTR IN BASRUR - NTRNEEL 1.mp3.mp3" }, ] }
         ];
 
         // ══════════════════════════════════════════
         //  AUTH
         // ══════════════════════════════════════════
         const USERS_KEY = 'jrntr_users', SESSION_KEY = 'jrntr_session';
-        const getUsers = () => { try { return JSON.parse(localStorage.getItem(USERS_KEY) || '{}'); } catch { return {}; } };
-        const saveUsers = u => { try { localStorage.setItem(USERS_KEY, JSON.stringify(u)); } catch { } };
-        const getSession = () => { try { return JSON.parse(localStorage.getItem(SESSION_KEY) || 'null'); } catch { return null; } };
-        const saveSession = u => { try { localStorage.setItem(SESSION_KEY, JSON.stringify(u)); } catch { } };
-        const clearSess = () => { try { localStorage.removeItem(SESSION_KEY); } catch { } };
+        const getUsers = () => { try { return JSON.parse(localStorage.getItem(USERS_KEY) || '{}') } catch { return {} } };
+        const saveUsers = u => { try { localStorage.setItem(USERS_KEY, JSON.stringify(u)) } catch { } };
+        const getSession = () => { try { return JSON.parse(localStorage.getItem(SESSION_KEY) || 'null') } catch { return null } };
+        const saveSession = u => { try { localStorage.setItem(SESSION_KEY, JSON.stringify(u)) } catch { } };
+        const clearSess = () => { try { localStorage.removeItem(SESSION_KEY) } catch { } };
 
         let currentUser = getSession();
 
@@ -61,12 +63,14 @@
                 aboutPage.classList.add('hidden');
                 musicPage.classList.remove('hidden');
 
-                const ini = (currentUser.firstName[0] + (currentUser.lastName[0] || '')).toUpperCase();
+                const first = currentUser.firstName || '';
+                const last = currentUser.lastName || '';
+                const ini = ((first[0] || '') + (last[0] || '')).toUpperCase() || 'U';
                 document.getElementById('userAvatarInitial').textContent = ini;
-                document.getElementById('navUserName').textContent = currentUser.firstName;
-                document.getElementById('menuFullName').textContent = currentUser.firstName + ' ' + currentUser.lastName;
+                document.getElementById('navUserName').textContent = first;
+                document.getElementById('menuFullName').textContent = first + ' ' + last;
                 document.getElementById('menuEmail').textContent = currentUser.email;
-                document.getElementById('heroWelcome').textContent = '👋 Welcome back, ' + currentUser.firstName + '!';
+                document.getElementById('heroWelcome').textContent = '👋 Welcome back, ' + first + '!';
             } else {
                 badge.classList.add('hidden');
                 signinBtn.classList.remove('hidden');
@@ -76,16 +80,8 @@
             }
         }
 
-        function openModal(tab) {
-            document.getElementById('modalBackdrop').classList.add('active');
-            switchTab(tab || 'signin');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeModal() {
-            document.getElementById('modalBackdrop').classList.remove('active');
-            document.body.style.overflow = '';
-            resetForms();
-        }
+        function openModal(tab) { document.getElementById('modalBackdrop').classList.add('active'); switchTab(tab || 'signin'); document.body.style.overflow = 'hidden' }
+        function closeModal() { document.getElementById('modalBackdrop').classList.remove('active'); document.body.style.overflow = ''; resetForms() }
         function switchTab(t) {
             document.getElementById('tabSignin').classList.toggle('active', t === 'signin');
             document.getElementById('tabSignup').classList.toggle('active', t === 'signup');
@@ -94,31 +90,26 @@
             resetForms();
         }
         function resetForms() {
-            ['siEmail', 'siPass', 'suFirst', 'suLast', 'suEmail', 'suPass', 'suConfirm'].forEach(id => { const e = document.getElementById(id); if (e) e.value = ''; });
+            ['siEmail', 'siPass', 'suFirst', 'suLast', 'suEmail', 'suPass', 'suConfirm'].forEach(id => { const e = document.getElementById(id); if (e) e.value = '' });
             document.querySelectorAll('.form-input').forEach(e => e.classList.remove('err'));
-            document.querySelectorAll('.err-msg, .general-err').forEach(e => e.classList.remove('show'));
+            document.querySelectorAll('.err-msg,.general-err').forEach(e => e.classList.remove('show'));
         }
 
         function doSignIn() {
             const email = document.getElementById('siEmail').value.trim().toLowerCase();
             const pass = document.getElementById('siPass').value;
-            clearErrs('si');
-            let ok = true;
-            if (!email || !validEmail(email)) { showErr('siEmail', 'siEmailErr', 'Enter a valid email.'); ok = false; }
-            if (!pass) { showErr('siPass', 'siPassErr', 'Password required.'); ok = false; }
+            clearErrs(); let ok = true;
+            if (!email || !validEmail(email)) { showErr('siEmail', 'siEmailErr', 'Enter a valid email.'); ok = false }
+            if (!pass) { showErr('siPass', 'siPassErr', 'Password required.'); ok = false }
             if (!ok) return;
             setBtnLoading('btnSignin', true, 'Sign In');
             setTimeout(() => {
-                const users = getUsers();
-                const u = users[email];
-                if (!u) { showGenErr('siGenErr', 'No account found. Please create one.'); setBtnLoading('btnSignin', false, 'Sign In'); return; }
-                if (u.password !== simpleHash(pass)) { showGenErr('siGenErr', 'Incorrect password.'); setBtnLoading('btnSignin', false, 'Sign In'); return; }
+                const users = getUsers(); const u = users[email];
+                if (!u) { showGenErr('siGenErr', 'No account found. Please create one.'); setBtnLoading('btnSignin', false, 'Sign In'); return }
+                if (u.password !== simpleHash(pass)) { showGenErr('siGenErr', 'Incorrect password.'); setBtnLoading('btnSignin', false, 'Sign In'); return }
                 currentUser = { firstName: u.firstName, lastName: u.lastName, email: u.email };
-                saveSession(currentUser);
-                setBtnLoading('btnSignin', false, 'Sign In');
-                closeModal();
-                updateAuthUI();
-                initMusicApp();
+                saveSession(currentUser); setBtnLoading('btnSignin', false, 'Sign In');
+                closeModal(); updateAuthUI(); initMusicApp();
                 toast(`👋 Welcome back, ${currentUser.firstName}!`);
             }, 900);
         }
@@ -129,71 +120,48 @@
             const em = document.getElementById('suEmail').value.trim().toLowerCase();
             const pw = document.getElementById('suPass').value;
             const cf = document.getElementById('suConfirm').value;
-            clearErrs('su');
-            let ok = true;
-            if (!fn) { showErr('suFirst', 'suFirstErr', 'Required.'); ok = false; }
-            if (!ln) { showErr('suLast', 'suLastErr', 'Required.'); ok = false; }
-            if (!em || !validEmail(em)) { showErr('suEmail', 'suEmailErr', 'Enter a valid email.'); ok = false; }
-            if (pw.length < 8) { showErr('suPass', 'suPassErr', 'Min 8 characters.'); ok = false; }
-            if (cf !== pw) { showErr('suConfirm', 'suConfirmErr', 'Passwords don\'t match.'); ok = false; }
+            clearErrs(); let ok = true;
+            if (!fn) { showErr('suFirst', 'suFirstErr', 'Required.'); ok = false }
+            if (!ln) { showErr('suLast', 'suLastErr', 'Required.'); ok = false }
+            if (!em || !validEmail(em)) { showErr('suEmail', 'suEmailErr', 'Enter a valid email.'); ok = false }
+            if (pw.length < 8) { showErr('suPass', 'suPassErr', 'Min 8 characters.'); ok = false }
+            if (cf !== pw) { showErr('suConfirm', 'suConfirmErr', "Passwords don't match."); ok = false }
             if (!ok) return;
             setBtnLoading('btnSignup', true, 'Create Account');
             setTimeout(() => {
                 const users = getUsers();
-                if (users[em]) { showGenErr('suGenErr', 'Email already registered. Sign in instead.'); setBtnLoading('btnSignup', false, 'Create Account'); return; }
+                if (users[em]) { showGenErr('suGenErr', 'Email already registered.'); setBtnLoading('btnSignup', false, 'Create Account'); return }
                 users[em] = { firstName: fn, lastName: ln, email: em, password: simpleHash(pw) };
                 saveUsers(users);
                 currentUser = { firstName: fn, lastName: ln, email: em };
-                saveSession(currentUser);
-                setBtnLoading('btnSignup', false, 'Create Account');
-                closeModal();
-                updateAuthUI();
-                initMusicApp();
+                saveSession(currentUser); setBtnLoading('btnSignup', false, 'Create Account');
+                closeModal(); updateAuthUI(); initMusicApp();
                 toast(`🎉 Welcome, ${fn}! Your journey begins now.`);
             }, 1000);
         }
 
         function signOut() {
-            closeMenu();
-            const name = currentUser?.firstName || '';
-            currentUser = null;
-            clearSess();
+            closeMenu(); const name = currentUser?.firstName || '';
+            currentUser = null; clearSess();
             audioPlayer.pause();
             document.getElementById('musicPlayer').classList.remove('active');
-            updateAuthUI();
-            toast(`👋 See you soon, ${name}!`);
+            updateAuthUI(); toast(`👋 See you soon, ${name}!`);
         }
-
         function forgotPassword() {
             const em = document.getElementById('siEmail').value.trim().toLowerCase();
-            if (!em || !validEmail(em)) { showErr('siEmail', 'siEmailErr', 'Enter your email first.'); return; }
-            const users = getUsers();
-            toast(users[em] ? '📧 Reset instructions sent! (demo)' : 'No account with that email.');
+            if (!em || !validEmail(em)) { showErr('siEmail', 'siEmailErr', 'Enter your email first.'); return }
+            const users = getUsers(); toast(users[em] ? '📧 Reset instructions sent! (demo)' : 'No account with that email.');
         }
+        function closeMenu() { document.getElementById('userMenu').classList.remove('active'); document.getElementById('userBadge').classList.remove('open') }
 
-        function closeMenu() {
-            document.getElementById('userMenu').classList.remove('active');
-            document.getElementById('userBadge').classList.remove('open');
-        }
-
-        // Helpers
         const validEmail = e => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
-        const simpleHash = s => { let h = 0; for (let i = 0; i < s.length; i++) h = Math.imul(31, h) + s.charCodeAt(i) | 0; return h.toString(16); };
-        function showErr(iid, eid, msg) { const i = document.getElementById(iid), e = document.getElementById(eid); if (i) i.classList.add('err'); if (e) { e.textContent = msg; e.classList.add('show'); } }
-        function showGenErr(eid, msg) { const e = document.getElementById(eid); if (e) { e.textContent = msg; e.classList.add('show'); } }
-        function clearErrs(prefix) {
-            document.querySelectorAll('.form-input').forEach(e => e.classList.remove('err'));
-            document.querySelectorAll('.err-msg,.general-err').forEach(e => e.classList.remove('show'));
-        }
-        function setBtnLoading(id, loading, label) {
-            const b = document.getElementById(id); b.disabled = loading;
-            b.innerHTML = loading ? '<span class="spinner"></span>Please wait...' : label;
-        }
+        const simpleHash = s => { let h = 0; for (let i = 0; i < s.length; i++)h = Math.imul(31, h) + s.charCodeAt(i) | 0; return h.toString(16) };
+        function showErr(iid, eid, msg) { const i = document.getElementById(iid), e = document.getElementById(eid); if (i) i.classList.add('err'); if (e) { e.textContent = msg; e.classList.add('show') } }
+        function showGenErr(eid, msg) { const e = document.getElementById(eid); if (e) { e.textContent = msg; e.classList.add('show') } }
+        function clearErrs() { document.querySelectorAll('.form-input').forEach(e => e.classList.remove('err')); document.querySelectorAll('.err-msg,.general-err').forEach(e => e.classList.remove('show')) }
+        function setBtnLoading(id, loading, label) { const b = document.getElementById(id); b.disabled = loading; b.innerHTML = loading ? '<span class="spinner"></span>Please wait...' : label }
         let _toastT;
-        function toast(msg) {
-            const t = document.getElementById('toast'); document.getElementById('toastMsg').textContent = msg;
-            t.classList.add('show'); clearTimeout(_toastT); _toastT = setTimeout(() => t.classList.remove('show'), 3200);
-        }
+        function toast(msg) { const t = document.getElementById('toast'); document.getElementById('toastMsg').textContent = msg; t.classList.add('show'); clearTimeout(_toastT); _toastT = setTimeout(() => t.classList.remove('show'), 3200) }
 
         // ══════════════════════════════════════════
         //  MUSIC APP
@@ -210,15 +178,12 @@
             movies.forEach((m, mi) => m.songs.forEach((s, si) => allSongs.push({ ...s, movieTitle: m.title, movieYear: m.year, movieIdx: mi, songIdx: si })));
             renderAlbums(); renderSongs(); renderGallery();
             audioPlayer.volume = 0.7; updateVolUI(0.7);
-            // reset nav
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-            const lb = document.querySelector('.nav-btn[data-view="library"]');
-            if (lb) lb.classList.add('active');
+            const lb = document.querySelector('.nav-btn[data-view="library"]'); if (lb) lb.classList.add('active');
             document.getElementById('libraryView').classList.remove('hidden');
             document.getElementById('galleryView').classList.add('hidden');
         }
 
-        // Nav
         document.querySelectorAll('.nav-btn').forEach(btn => {
             btn.addEventListener('click', function () {
                 const v = this.dataset.view;
@@ -230,90 +195,55 @@
             });
         });
 
-        // User badge
         document.getElementById('userBadge').addEventListener('click', function (e) {
             e.stopPropagation();
             const m = document.getElementById('userMenu'), isOpen = m.classList.toggle('active');
             this.classList.toggle('open', isOpen);
         });
-        document.addEventListener('click', e => {
-            if (!document.getElementById('userBadge').contains(e.target)) closeMenu();
-        });
-        document.getElementById('modalBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('modalBackdrop')) closeModal(); });
-        document.getElementById('siPass').addEventListener('keydown', e => { if (e.key === 'Enter') doSignIn(); });
-        document.getElementById('suConfirm').addEventListener('keydown', e => { if (e.key === 'Enter') doSignUp(); });
+        document.addEventListener('click', e => { if (!document.getElementById('userBadge').contains(e.target)) closeMenu() });
+        document.getElementById('modalBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('modalBackdrop')) closeModal() });
+        document.getElementById('siPass').addEventListener('keydown', e => { if (e.key === 'Enter') doSignIn() });
+        document.getElementById('suConfirm').addEventListener('keydown', e => { if (e.key === 'Enter') doSignUp() });
         document.getElementById('searchInput').addEventListener('input', function () {
             currentSearch = this.value;
             document.getElementById('searchClear').classList.toggle('active', currentSearch.length > 0);
             renderAlbums(); renderSongs(); renderGallery();
         });
-        audioPlayer.addEventListener('loadedmetadata', () => { document.getElementById('duration').textContent = fmt(audioPlayer.duration); });
+        audioPlayer.addEventListener('loadedmetadata', () => { document.getElementById('duration').textContent = fmt(audioPlayer.duration) });
         audioPlayer.addEventListener('timeupdate', updateProgress);
         audioPlayer.addEventListener('ended', nextSong);
 
-        // Volume — full mouse + touch support
+        // Volume
         const vt = document.getElementById('volumeTrack');
-
-        function getVolFromEvent(clientX) {
-            const rect = vt.getBoundingClientRect();
-            return Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
-        }
-        function applyVolume(v) {
-            audioPlayer.volume = v;
-            updateVolUI(v);
-            if (v > 0) isMuted = false;
-        }
-
-        // ── Mouse events ──
+        function getVolFromEvent(clientX) { const rect = vt.getBoundingClientRect(); return Math.max(0, Math.min(1, (clientX - rect.left) / rect.width)) }
+        function applyVolume(v) { audioPlayer.volume = v; updateVolUI(v); if (v > 0) isMuted = false }
         vt.addEventListener('mousedown', e => {
-            e.preventDefault();
-            vt.classList.add('dragging');
-            applyVolume(getVolFromEvent(e.clientX));
+            e.preventDefault(); vt.classList.add('dragging'); applyVolume(getVolFromEvent(e.clientX));
             const onMove = me => applyVolume(getVolFromEvent(me.clientX));
-            const onUp = () => {
-                vt.classList.remove('dragging');
-                document.removeEventListener('mousemove', onMove);
-                document.removeEventListener('mouseup', onUp);
-            };
-            document.addEventListener('mousemove', onMove);
-            document.addEventListener('mouseup', onUp);
+            const onUp = () => { vt.classList.remove('dragging'); document.removeEventListener('mousemove', onMove); document.removeEventListener('mouseup', onUp) };
+            document.addEventListener('mousemove', onMove); document.addEventListener('mouseup', onUp);
         });
+        vt.addEventListener('touchstart', e => { e.preventDefault(); vt.classList.add('dragging'); applyVolume(getVolFromEvent(e.touches[0].clientX)) }, { passive: false });
+        vt.addEventListener('touchmove', e => { e.preventDefault(); applyVolume(getVolFromEvent(e.touches[0].clientX)) }, { passive: false });
+        vt.addEventListener('touchend', e => { vt.classList.remove('dragging'); if (e.changedTouches.length) applyVolume(getVolFromEvent(e.changedTouches[0].clientX)) }, { passive: true });
 
-        // ── Touch events ──
-        vt.addEventListener('touchstart', e => {
-            e.preventDefault();
-            vt.classList.add('dragging');
-            applyVolume(getVolFromEvent(e.touches[0].clientX));
-        }, { passive: false });
-
-        vt.addEventListener('touchmove', e => {
-            e.preventDefault();
-            applyVolume(getVolFromEvent(e.touches[0].clientX));
-        }, { passive: false });
-
-        vt.addEventListener('touchend', e => {
-            vt.classList.remove('dragging');
-            if (e.changedTouches.length)
-                applyVolume(getVolFromEvent(e.changedTouches[0].clientX));
-        }, { passive: true });
-
-        // Keyboard
         document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') { if (document.getElementById('modalBackdrop').classList.contains('active')) closeModal(); if (document.getElementById('lightbox').classList.contains('active')) closeLightbox(); }
+            if (e.key === 'Escape') {
+                if (document.getElementById('modalBackdrop').classList.contains('active')) closeModal();
+                if (document.getElementById('lightbox').classList.contains('active')) closeLightbox();
+            }
             if (musicPlayer.classList.contains('active') && e.target.tagName !== 'INPUT') {
-                if (e.code === 'Space') { e.preventDefault(); togglePlay(); }
+                if (e.code === 'Space') { e.preventDefault(); togglePlay() }
                 if (e.code === 'ArrowRight' && !document.getElementById('lightbox').classList.contains('active')) nextSong();
                 if (e.code === 'ArrowLeft' && !document.getElementById('lightbox').classList.contains('active')) previousSong();
             }
         });
 
-        // Lightbox touch
         let lbTx = 0;
-        const lb = document.getElementById('lightbox');
-        lb.addEventListener('touchstart', e => { lbTx = e.changedTouches[0].screenX; }, false);
-        lb.addEventListener('touchend', e => { const d = lbTx - e.changedTouches[0].screenX; if (Math.abs(d) > 50) navigateLightbox(d > 0 ? 1 : -1); }, false);
+        const lbEl = document.getElementById('lightbox');
+        lbEl.addEventListener('touchstart', e => { lbTx = e.changedTouches[0].screenX }, false);
+        lbEl.addEventListener('touchend', e => { const d = lbTx - e.changedTouches[0].screenX; if (Math.abs(d) > 50) navigateLightbox(d > 0 ? 1 : -1) }, false);
 
-        // Filter chips
         document.querySelectorAll('.filter-chip').forEach(btn => {
             btn.addEventListener('click', function () {
                 document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
@@ -322,19 +252,19 @@
             });
         });
 
-        function clearSearch() { document.getElementById('searchInput').value = ''; currentSearch = ''; document.getElementById('searchClear').classList.remove('active'); renderAlbums(); renderSongs(); renderGallery(); }
-        function getFiltered() { if (currentFilter === 'all') return movies; const [s, e] = currentFilter.split('-').map(Number); return movies.filter(m => m.year >= s && m.year <= e); }
+        function clearSearch() { document.getElementById('searchInput').value = ''; currentSearch = ''; document.getElementById('searchClear').classList.remove('active'); renderAlbums(); renderSongs(); renderGallery() }
+        function getFiltered() { if (currentFilter === 'all') return movies; const [s, e] = currentFilter.split('-').map(Number); return movies.filter(m => m.year >= s && m.year <= e) }
 
         function renderAlbums() {
             const grid = document.getElementById('albumsGrid'), nr = document.getElementById('noAlbumsResults');
             let fm = getFiltered();
             if (currentSearch) fm = fm.filter(m => m.title.toLowerCase().includes(currentSearch.toLowerCase()) || m.director.toLowerCase().includes(currentSearch.toLowerCase()) || m.songs.some(s => s.name.toLowerCase().includes(currentSearch.toLowerCase())));
-            if (!fm.length) { grid.classList.add('hidden'); nr.classList.remove('hidden'); return; }
+            if (!fm.length) { grid.classList.add('hidden'); nr.classList.remove('hidden'); return }
             grid.classList.remove('hidden'); nr.classList.add('hidden');
             grid.innerHTML = fm.map(movie => `<div class="album-card" onclick="playAlbum(${movies.indexOf(movie)})">
         <div class="album-cover">
             <img src="${movie.poster}" class="album-cover-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" alt="">
-            <div class="album-cover-placeholder" style="display:none;">🎬</div>
+            <div class="album-cover-placeholder" style="display:none">🎬</div>
             <div class="album-play-overlay"><button class="album-play-btn" onclick="event.stopPropagation();playAlbum(${movies.indexOf(movie)})">▶</button></div>
         </div>
         <div class="album-title">${movie.title}</div>
@@ -345,9 +275,9 @@
         function renderSongs() {
             const list = document.getElementById('songsList'), nr = document.getElementById('noSongsResults');
             let fs = allSongs;
-            if (currentFilter !== 'all') { const [s, e] = currentFilter.split('-').map(Number); fs = fs.filter(x => x.movieYear >= s && x.movieYear <= e); }
+            if (currentFilter !== 'all') { const [s, e] = currentFilter.split('-').map(Number); fs = fs.filter(x => x.movieYear >= s && x.movieYear <= e) }
             if (currentSearch) fs = fs.filter(s => s.name.toLowerCase().includes(currentSearch.toLowerCase()) || s.movieTitle.toLowerCase().includes(currentSearch.toLowerCase()));
-            if (!fs.length) { list.classList.add('hidden'); nr.classList.remove('hidden'); return; }
+            if (!fs.length) { list.classList.add('hidden'); nr.classList.remove('hidden'); return }
             list.classList.remove('hidden'); nr.classList.add('hidden');
             list.innerHTML = fs.map((song, i) => {
                 const p = (currentMovieIndex === song.movieIdx && currentSongIndex === song.songIdx);
@@ -359,19 +289,131 @@
             }).join('');
         }
 
+        // ══════════════════════════════════════════
+        //  GALLERY — with mobile swipe slider
+        // ══════════════════════════════════════════
         function renderGallery() {
             const grid = document.getElementById('galleryGrid');
             let fm = getFiltered();
             if (currentSearch) fm = fm.filter(m => m.title.toLowerCase().includes(currentSearch.toLowerCase()) || m.director.toLowerCase().includes(currentSearch.toLowerCase()));
-            grid.innerHTML = fm.map(movie => `<div class="gallery-movie-section">
-        <div class="gallery-movie-title">${movie.title}</div>
-        <div class="gallery-movie-year">${movie.year} · ${movie.director}</div>
-        <div class="gallery-images">${movie.gallery.map((img, i) => `
-            <div class="gallery-image-wrapper" onclick="openLightbox(${movies.indexOf(movie)},${i})">
-                <img src="${img}" class="gallery-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" alt="">
-                <div class="gallery-image-placeholder" style="display:none;">📷</div>
-            </div>`).join('')}</div>
-    </div>`).join('');
+
+            grid.innerHTML = fm.map(movie => {
+                const mi = movies.indexOf(movie);
+
+                // Desktop 2×2 grid images
+                const desktopImgs = movie.gallery.map((img, i) => `
+                    <div class="gallery-image-wrapper" onclick="openLightbox(${mi},${i})">
+                        <img src="${img}" class="gallery-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" alt="">
+                        <div class="gallery-image-placeholder" style="display:none">📷</div>
+                    </div>`).join('');
+
+                // Mobile slider slides
+                const slides = movie.gallery.map((img, i) => `
+                    <div class="gallery-slide" onclick="openLightbox(${mi},${i})">
+                        <img src="${img}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" alt="${movie.title} photo ${i+1}">
+                        <div class="gallery-slide-placeholder" style="display:none">📷</div>
+                    </div>`).join('');
+
+                // Dots
+                const dots = movie.gallery.map((_, i) => `
+                    <button class="gallery-dot${i === 0 ? ' active' : ''}" 
+                        onclick="sliderGoTo('slider-${mi}', ${i})" 
+                        aria-label="Photo ${i+1}"></button>`).join('');
+
+                return `
+                <div class="gallery-movie-section">
+                    <div class="gallery-movie-title">${movie.title}</div>
+                    <div class="gallery-movie-year">${movie.year} · ${movie.director}</div>
+
+                    <!-- Desktop: 2×2 grid -->
+                    <div class="gallery-images">${desktopImgs}</div>
+
+                    <!-- Mobile: swipe slider -->
+                    <div class="gallery-slider-wrap" id="slider-${mi}" data-index="0" data-mi="${mi}">
+                        <button class="gallery-slider-nav gallery-slider-prev" onclick="sliderStep('slider-${mi}', -1)">‹</button>
+                        <div class="gallery-slider-track" id="track-${mi}">${slides}</div>
+                        <button class="gallery-slider-nav gallery-slider-next" onclick="sliderStep('slider-${mi}', 1)">›</button>
+                    </div>
+                    <div class="gallery-dots" id="dots-${mi}">${dots}</div>
+                </div>`;
+            }).join('');
+
+            // Attach touch swipe to all sliders
+            document.querySelectorAll('.gallery-slider-wrap').forEach(wrap => {
+                attachSliderTouch(wrap);
+            });
+        }
+
+        /* ── Slider helpers ── */
+        function sliderGoTo(sliderId, idx) {
+            const wrap = document.getElementById(sliderId);
+            if (!wrap) return;
+            const mi = wrap.dataset.mi;
+            const total = movies[mi].gallery.length;
+            idx = Math.max(0, Math.min(total - 1, idx));
+            wrap.dataset.index = idx;
+            const track = document.getElementById('track-' + mi);
+            track.style.transform = `translateX(-${idx * 100}%)`;
+            // Update dots
+            const dotsEl = document.getElementById('dots-' + mi);
+            if (dotsEl) {
+                dotsEl.querySelectorAll('.gallery-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+            }
+        }
+
+        function sliderStep(sliderId, dir) {
+            const wrap = document.getElementById(sliderId);
+            if (!wrap) return;
+            const mi = wrap.dataset.mi;
+            const total = movies[mi].gallery.length;
+            let idx = parseInt(wrap.dataset.index || 0) + dir;
+            // Wrap around
+            if (idx < 0) idx = total - 1;
+            if (idx >= total) idx = 0;
+            sliderGoTo(sliderId, idx);
+        }
+
+        function attachSliderTouch(wrap) {
+            let startX = 0, startY = 0, isDragging = false, diffX = 0;
+            const mi = wrap.dataset.mi;
+            const track = document.getElementById('track-' + mi);
+
+            wrap.addEventListener('touchstart', e => {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+                isDragging = true;
+                diffX = 0;
+                track.style.transition = 'none';
+            }, { passive: true });
+
+            wrap.addEventListener('touchmove', e => {
+                if (!isDragging) return;
+                diffX = e.touches[0].clientX - startX;
+                const diffY = e.touches[0].clientY - startY;
+                // Only slide if horizontal motion is dominant
+                if (Math.abs(diffX) > Math.abs(diffY)) {
+                    e.preventDefault();
+                    const idx = parseInt(wrap.dataset.index || 0);
+                    const base = -idx * 100;
+                    const wrapW = wrap.offsetWidth;
+                    const pct = (diffX / wrapW) * 100;
+                    track.style.transform = `translateX(calc(${base}% + ${diffX}px))`;
+                }
+            }, { passive: false });
+
+            wrap.addEventListener('touchend', e => {
+                if (!isDragging) return;
+                isDragging = false;
+                track.style.transition = 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+                if (Math.abs(diffX) > 50) {
+                    sliderStep(wrap.id, diffX < 0 ? 1 : -1);
+                } else {
+                    // Snap back
+                    const idx = parseInt(wrap.dataset.index || 0);
+                    track.style.transform = `translateX(-${idx * 100}%)`;
+                }
+                diffX = 0;
+            }, { passive: true });
         }
 
         function openLightbox(mi, ii) {
@@ -381,60 +423,51 @@
             document.getElementById('lightboxTitle').textContent = `${m.title} (${m.year})`;
             document.getElementById('lightboxCounter').textContent = `${ii + 1} / ${lightboxImages.length}`;
             const l = document.getElementById('lightbox'); l.classList.add('active'); document.body.style.overflow = 'hidden';
-            l.onclick = e => { if (e.target === l) closeLightbox(); };
+            l.onclick = e => { if (e.target === l) closeLightbox() };
         }
-        function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = ''; }
-        function navigateLightbox(d) { lightboxIndex = (lightboxIndex + d + lightboxImages.length) % lightboxImages.length; document.getElementById('lightboxImage').src = lightboxImages[lightboxIndex]; document.getElementById('lightboxCounter').textContent = `${lightboxIndex + 1} / ${lightboxImages.length}`; }
+        function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = '' }
+        function navigateLightbox(d) { lightboxIndex = (lightboxIndex + d + lightboxImages.length) % lightboxImages.length; document.getElementById('lightboxImage').src = lightboxImages[lightboxIndex]; document.getElementById('lightboxCounter').textContent = `${lightboxIndex + 1} / ${lightboxImages.length}` }
 
-        function playAlbum(mi) { if (movies[mi].songs.length) playSong(mi, 0); }
+        function playAlbum(mi) { if (movies[mi].songs.length) playSong(mi, 0) }
         function playSong(mi, si) {
             currentMovieIndex = mi; currentSongIndex = si;
             const m = movies[mi], s = m.songs[si];
             document.getElementById('playerSongName').textContent = s.name;
             document.getElementById('playerArtist').textContent = `${m.title} · Jr NTR`;
-            document.getElementById('playerAlbumArt').innerHTML = `<img src="${m.poster}" class="album-art-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="album-art-placeholder" style="display:none;">🎵</div>`;
+            document.getElementById('playerAlbumArt').innerHTML = `<img src="${m.poster}" class="album-art-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="album-art-placeholder" style="display:none">🎵</div>`;
             musicPlayer.classList.add('active');
             audioPlayer.src = s.file;
-            audioPlayer.play().then(() => { isPlaying = true; updPlay(); renderSongs(); }).catch(() => { });
+            audioPlayer.play().then(() => { isPlaying = true; updPlay(); renderSongs() }).catch(() => { });
         }
-        function togglePlay() { if (currentMovieIndex === -1) return; if (isPlaying) { audioPlayer.pause(); isPlaying = false; } else { audioPlayer.play(); isPlaying = true; } updPlay(); }
-        function updPlay() { document.getElementById('playBtn').textContent = isPlaying ? '⏸' : '▶'; }
-        function nextSong() { if (currentMovieIndex === -1) return; const m = movies[currentMovieIndex]; if (currentSongIndex < m.songs.length - 1) playSong(currentMovieIndex, currentSongIndex + 1); else if (currentMovieIndex < movies.length - 1) playSong(currentMovieIndex + 1, 0); else playSong(0, 0); }
-        function previousSong() { if (currentMovieIndex === -1) return; if (currentSongIndex > 0) playSong(currentMovieIndex, currentSongIndex - 1); else if (currentMovieIndex > 0) { const p = movies[currentMovieIndex - 1]; playSong(currentMovieIndex - 1, p.songs.length - 1); } else { const l = movies[movies.length - 1]; playSong(movies.length - 1, l.songs.length - 1); } }
-        // ── Progress bar: mouse + touch seek ──
+        function togglePlay() { if (currentMovieIndex === -1) return; if (isPlaying) { audioPlayer.pause(); isPlaying = false } else { audioPlayer.play(); isPlaying = true } updPlay() }
+        function updPlay() { document.getElementById('playBtn').textContent = isPlaying ? '⏸' : '▶' }
+        function nextSong() { if (currentMovieIndex === -1) return; const m = movies[currentMovieIndex]; if (currentSongIndex < m.songs.length - 1) playSong(currentMovieIndex, currentSongIndex + 1); else if (currentMovieIndex < movies.length - 1) playSong(currentMovieIndex + 1, 0); else playSong(0, 0) }
+        function previousSong() { if (currentMovieIndex === -1) return; if (currentSongIndex > 0) playSong(currentMovieIndex, currentSongIndex - 1); else if (currentMovieIndex > 0) { const p = movies[currentMovieIndex - 1]; playSong(currentMovieIndex - 1, p.songs.length - 1) } else { const l = movies[movies.length - 1]; playSong(movies.length - 1, l.songs.length - 1) } }
+
         const progressTrack = document.getElementById('progressFill').parentElement;
-
-        function seekFromClientX(clientX) {
-            if (!audioPlayer.duration) return;
-            const r = progressTrack.getBoundingClientRect();
-            audioPlayer.currentTime = audioPlayer.duration * Math.max(0, Math.min(1, (clientX - r.left) / r.width));
-        }
+        function seekFromClientX(clientX) { if (!audioPlayer.duration) return; const r = progressTrack.getBoundingClientRect(); audioPlayer.currentTime = audioPlayer.duration * Math.max(0, Math.min(1, (clientX - r.left) / r.width)) }
         progressTrack.addEventListener('mousedown', e => {
-            e.preventDefault();
-            seekFromClientX(e.clientX);
+            e.preventDefault(); seekFromClientX(e.clientX);
             const onMove = me => seekFromClientX(me.clientX);
-            const onUp = () => { document.removeEventListener('mousemove', onMove); document.removeEventListener('mouseup', onUp); };
-            document.addEventListener('mousemove', onMove);
-            document.addEventListener('mouseup', onUp);
+            const onUp = () => { document.removeEventListener('mousemove', onMove); document.removeEventListener('mouseup', onUp) };
+            document.addEventListener('mousemove', onMove); document.addEventListener('mouseup', onUp);
         });
-        progressTrack.addEventListener('touchstart', e => { e.preventDefault(); seekFromClientX(e.touches[0].clientX); }, { passive: false });
-        progressTrack.addEventListener('touchmove', e => { e.preventDefault(); seekFromClientX(e.touches[0].clientX); }, { passive: false });
-        progressTrack.addEventListener('touchend', e => { if (e.changedTouches.length) seekFromClientX(e.changedTouches[0].clientX); }, { passive: true });
+        progressTrack.addEventListener('touchstart', e => { e.preventDefault(); seekFromClientX(e.touches[0].clientX) }, { passive: false });
+        progressTrack.addEventListener('touchmove', e => { e.preventDefault(); seekFromClientX(e.touches[0].clientX) }, { passive: false });
+        progressTrack.addEventListener('touchend', e => { if (e.changedTouches.length) seekFromClientX(e.changedTouches[0].clientX) }, { passive: true });
 
-        function seekSong(e) { seekFromClientX(e.clientX); } // kept for onclick fallback
-        function updateProgress() { if (!audioPlayer.duration) return; const p = (audioPlayer.currentTime / audioPlayer.duration) * 100; document.getElementById('progressFill').style.width = p + '%'; document.getElementById('currentTime').textContent = fmt(audioPlayer.currentTime); }
-        const fmt = s => { if (isNaN(s)) return '0:00'; return `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`; };
-        function updateVolUI(v) { const p = v * 100; document.getElementById('volumeFill').style.width = p + '%'; document.getElementById('volumeThumb').style.left = p + '%'; document.getElementById('volumeIcon').textContent = (v === 0 || isMuted) ? '🔇' : v < 0.3 ? '🔈' : v < 0.7 ? '🔉' : '🔊'; }
-        function toggleMute() { if (isMuted) { audioPlayer.volume = previousVolume; updateVolUI(previousVolume); isMuted = false; } else { previousVolume = audioPlayer.volume; audioPlayer.volume = 0; updateVolUI(0); isMuted = true; } }
-        function playAll() { if (allSongs.length) playSong(0, 0); }
-        function shufflePlay() { if (allSongs.length) { const r = allSongs[Math.floor(Math.random() * allSongs.length)]; playSong(r.movieIdx, r.songIdx); } }
+        function updateProgress() { if (!audioPlayer.duration) return; const p = (audioPlayer.currentTime / audioPlayer.duration) * 100; document.getElementById('progressFill').style.width = p + '%'; document.getElementById('currentTime').textContent = fmt(audioPlayer.currentTime) }
+        const fmt = s => { if (isNaN(s)) return '0:00'; return `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}` };
+        function updateVolUI(v) { const p = v * 100; document.getElementById('volumeFill').style.width = p + '%'; document.getElementById('volumeThumb').style.left = p + '%'; document.getElementById('volumeIcon').textContent = (v === 0 || isMuted) ? '🔇' : v < 0.3 ? '🔈' : v < 0.7 ? '🔉' : '🔊' }
+        function toggleMute() { if (isMuted) { audioPlayer.volume = previousVolume; updateVolUI(previousVolume); isMuted = false } else { previousVolume = audioPlayer.volume; audioPlayer.volume = 0; updateVolUI(0); isMuted = true } }
+        function playAll() { if (allSongs.length) playSong(0, 0) }
+        function shufflePlay() { if (allSongs.length) { const r = allSongs[Math.floor(Math.random() * allSongs.length)]; playSong(r.movieIdx, r.songIdx) } }
 
-        // ══════════════════════════════════════════
-        //  INIT
-        // ══════════════════════════════════════════
+        // ── INIT ──
         document.addEventListener('DOMContentLoaded', () => {
             updateAuthUI();
             if (currentUser) initMusicApp();
             setTimeout(() => document.getElementById('loadingOverlay').classList.add('hidden'), 800);
         });
-   
+
+ 

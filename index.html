@@ -9,22 +9,23 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
       
-   <nav class="navbar">
+     
+   <!-- ═══════════════ NAVBAR ═══════════════ -->
+    <nav class="navbar">
         <div class="nav-content">
             <div class="logo">
                 <span class="logo-icon">🎵</span>
                 <span class="logo-text">JR NTR Music</span>
             </div>
 
-            <!-- Music app nav tabs (hidden until logged in) -->
             <div class="nav-center hidden" id="navCenter">
                 <button class="nav-btn" data-view="library">Library</button>
                 <button class="nav-btn" data-view="gallery">Gallery</button>
                 <button class="nav-btn" data-view="search">Search</button>
             </div>
 
-            <!-- Logged-in user badge -->
             <div class="user-badge hidden" id="userBadge">
                 <div class="user-avatar" id="userAvatarInitial">M</div>
                 <span class="user-name" id="navUserName">User</span>
@@ -34,28 +35,19 @@
                         <div class="user-menu-fullname" id="menuFullName"></div>
                         <div class="user-menu-email" id="menuEmail"></div>
                     </div>
-                    <div class="user-menu-item" onclick="closeMenu()">
-                        <span>⚙️</span> Account Settings
-                    </div>
-                    <div class="user-menu-item" onclick="closeMenu()">
-                        <span>🎵</span> My Playlists
-                    </div>
+                    <div class="user-menu-item" onclick="closeMenu()"><span>⚙️</span> Account Settings</div>
+                    <div class="user-menu-item" onclick="closeMenu()"><span>🎵</span> My Playlists</div>
                     <div class="user-menu-divider"></div>
-                    <div class="user-menu-item danger" onclick="signOut()">
-                        <span>🚪</span> Sign Out
-                    </div>
+                    <div class="user-menu-item danger" onclick="signOut()"><span>🚪</span> Sign Out</div>
                 </div>
             </div>
 
-            <!-- Logged-out sign-in button -->
             <button class="signin-nav-btn" id="signinNavBtn" onclick="openModal('signin')">Sign In</button>
         </div>
     </nav>
 
     <!-- ═══════════════ ABOUT PAGE ═══════════════ -->
     <div id="aboutPage">
-
-        <!-- Hero -->
         <div class="about-hero">
             <div class="about-hero-bg"></div>
             <div class="about-hero-ring"></div>
@@ -64,283 +56,132 @@
                 <div class="about-left">
                     <div class="about-tag">⭐ Young Tiger of Telugu Cinema</div>
                     <h1 class="about-name">JR NTR</h1>
-                    <p class="about-nickname">Nandamuri Taraka Rama Rao Jr. · <span>Man of Masses</span></p>
-                    <p class="about-desc">
-                        One of Telugu cinema's most celebrated actors, Jr NTR has delivered blockbuster after
-                        blockbuster over two decades.
-                        Known for his powerhouse performances, electrifying dance moves, and versatile acting, he is the
-                        grandson of
-                        legendary actor-politician N.T. Rama Rao and a true heir to the Nandamuri legacy.
-                    </p>
+                    <p class="about-nickname">Nandamuri Taraka Rama Rao Jr. · <span>Young Tiger</span></p>
+                    <p class="about-desc">One of Telugu cinema's most celebrated actors, Jr NTR has delivered
+                        blockbuster after blockbuster over two decades. Known for his powerhouse performances,
+                        electrifying dance moves, and versatile acting, he is the grandson of legendary actor-politician
+                        N.T. Rama Rao and a true heir to the Nandamuri legacy.</p>
                     <div class="about-stats">
-                        <div class="stat-item"><span class="stat-num">30+</span><span class="stat-label">Films</span>
-                        </div>
-                        <div class="stat-item"><span class="stat-num">150+</span><span class="stat-label">Songs</span>
-                        </div>
-                        <div class="stat-item"><span class="stat-num">25+</span><span class="stat-label">Awards</span>
-                        </div>
-                        <div class="stat-item"><span class="stat-num">2001</span><span class="stat-label">Debut</span>
-                        </div>
+                        <div class="stat-item"><span class="stat-num">30+</span><span class="stat-label">Films</span></div>
+                        <div class="stat-item"><span class="stat-num">150+</span><span class="stat-label">Songs</span></div>
+                        <div class="stat-item"><span class="stat-num">25+</span><span class="stat-label">Awards</span></div>
+                        <div class="stat-item"><span class="stat-num">2001</span><span class="stat-label">Debut</span></div>
                     </div>
                     <div class="about-actions">
-                        <button class="btn-gold" onclick="openModal('signin')">
-                            <span>🎵</span> Listen Now — Sign In
-                        </button>
-                        <button class="btn-outline" onclick="openModal('signup')">
-                            <span>✨</span> Create Account
-                        </button>
+                        <button class="btn-gold" onclick="openModal('signin')"><span>🎵</span> Listen Now — Sign In</button>
+                        <button class="btn-outline" onclick="openModal('signup')"><span>✨</span> Create Account</button>
                     </div>
                 </div>
                 <div class="about-right">
                     <div class="about-img-frame">
                         <div class="about-img-glow"></div>
                         <div class="about-img-card">
-                            <img src="posters/rrr.jpg" alt="Jr NTR — RRR"
-                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <!-- <div class="about-img-placeholder">
-                                <span class="big-icon">🐯</span>
-                                <p>Young Tiger</p>
-                            </div> -->
+                            <img src="posters/rrr.jpg" alt="Jr NTR"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                         </div>
                     </div>
-                    <!-- <div class="about-float-badge">
-                        <span class="badge-icon">🏆</span>
-                        <div>
-                            <div class="badge-text-top">Latest Film</div>
-                            <div class="badge-text-main">Devara (2024)</div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
 
-        <!-- Career Timeline -->
         <div class="about-section">
-            <h2 class="section-heading">
-                Career Journey <div class="section-heading-line"></div>
-            </h2>
+            <h2 class="section-heading">Career Journey <div class="section-heading-line"></div></h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-year">2001</div>
-                    <div class="timeline-line">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-connector"></div>
-                    </div>
+                    <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-connector"></div></div>
                     <div class="timeline-body">
                         <div class="timeline-title">Debut — Student No. 1</div>
-                        <div class="timeline-desc">Made a stunning debut under director S.S. Rajamouli with Student No.
-                            1, showcasing his dance and action abilities. Also appeared in Ninnu Choodalani and Subbu
-                            the same year, establishing himself as a star.</div>
+                        <div class="timeline-desc">Made a stunning debut under S.S. Rajamouli with Student No. 1. Also appeared in Ninnu Choodalani and Subbu the same year.</div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">2003</div>
-                    <div class="timeline-line">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-connector"></div>
-                    </div>
+                    <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-connector"></div></div>
                     <div class="timeline-body">
                         <div class="timeline-title">Simhadri — Breakthrough Blockbuster</div>
-                        <div class="timeline-desc">Rajamouli's Simhadri became a massive commercial success, giving NTR
-                            his first superhit title as a lead hero. The film's music and his double role performance
-                            made him a household name.</div>
+                        <div class="timeline-desc">Rajamouli's Simhadri was a massive commercial success, giving NTR his first superhit as lead hero.</div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">2007</div>
-                    <div class="timeline-line">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-connector"></div>
-                    </div>
+                    <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-connector"></div></div>
                     <div class="timeline-body">
                         <div class="timeline-title">Yamadonga — Fantasy Epic</div>
-                        <div class="timeline-desc">Another Rajamouli collaboration that showcased NTR's comedic timing
-                            and larger-than-life screen presence. The "Young Yama" character became iconic in Telugu pop
-                            culture.</div>
+                        <div class="timeline-desc">Another Rajamouli collaboration. The "Young Yama" character became iconic in Telugu pop culture.</div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">2013</div>
-                    <div class="timeline-line">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-connector"></div>
-                    </div>
+                    <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-connector"></div></div>
                     <div class="timeline-body">
-                        <div class="timeline-title">Dhammu & Baadshah</div>
-                        <div class="timeline-desc">A phenomenal double blockbuster year. Both films were massive box
-                            office successes and cemented NTR as the "Young Tiger" of Telugu cinema with back-to-back
-                            hits.</div>
+                        <div class="timeline-title">Ramayya Vasthavayya & Baadshah</div>
+                        <div class="timeline-desc">A phenomenal double blockbuster year cementing NTR as the "Young Tiger" of Telugu cinema.</div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">2016</div>
-                    <div class="timeline-line">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-connector"></div>
-                    </div>
+                    <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-connector"></div></div>
                     <div class="timeline-body">
                         <div class="timeline-title">Nannaku Prematho & Janatha Garage</div>
-                        <div class="timeline-desc">Nannaku Prematho's "Follow Follow" became a cultural anthem across
-                            India. Janatha Garage further proved his range as a serious actor, with the film earning
-                            blockbuster status.</div>
+                        <div class="timeline-desc">"Follow Follow" became a cultural anthem. Janatha Garage proved his range as a serious actor.</div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">2022</div>
-                    <div class="timeline-line">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-connector"></div>
-                    </div>
+                    <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-connector"></div></div>
                     <div class="timeline-body">
                         <div class="timeline-title">RRR — Global Recognition</div>
-                        <div class="timeline-desc">S.S. Rajamouli's RRR took the world by storm. Jr NTR's portrayal of
-                            Komaram Bheem won widespread acclaim. "Naatu Naatu" won the Academy Award for Best Original
-                            Song, bringing global attention to Telugu cinema.</div>
+                        <div class="timeline-desc">RRR took the world by storm. "Naatu Naatu" won the Academy Award for Best Original Song.</div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">2024</div>
-                    <div class="timeline-line">
-                        <div class="timeline-dot"></div>
-                    </div>
+                    <div class="timeline-line"><div class="timeline-dot"></div></div>
                     <div class="timeline-body">
                         <div class="timeline-title">Devara — New Chapter</div>
-                        <div class="timeline-desc">Devara Part 1 directed by Koratala Siva marked another ambitious
-                            chapter, with NTR playing a powerful dual role. The film's grandeur and music were widely
-                            praised.</div>
+                        <div class="timeline-desc">Devara Part 1 directed by Koratala Siva marked another ambitious chapter with a powerful dual role.</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Highlight Films -->
-        <div class="about-section" style="padding-top: 0;">
-            <h2 class="section-heading">
-                Iconic Films <div class="section-heading-line"></div>
-            </h2>
+        <div class="about-section" style="padding-top:0">
+            <h2 class="section-heading">Iconic Films <div class="section-heading-line"></div></h2>
             <div class="films-grid">
-                <div class="film-card">
-                    <div class="film-poster"><img src="posters/simhadri.jpg" onerror="this.style.display='none'"
-                            alt=""></div>
-                    <div class="film-info">
-                        <div class="film-title">Simhadri</div>
-                        <div class="film-year">2003 · S.S. Rajamouli</div>
-                    </div>
-                </div>
-                <div class="film-card">
-                    <div class="film-poster"><img src="posters/yamadonga.jpg" onerror="this.style.display='none'"
-                            alt=""></div>
-                    <div class="film-info">
-                        <div class="film-title">Yamadonga</div>
-                        <div class="film-year">2007 · S.S. Rajamouli</div>
-                    </div>
-                </div>
-                <div class="film-card">
-                    <div class="film-poster"><img src="posters/baadshah.jpg" onerror="this.style.display='none'"
-                            alt=""></div>
-                    <div class="film-info">
-                        <div class="film-title">Baadshah</div>
-                        <div class="film-year">2013 · Srinu Vaitla</div>
-                    </div>
-                </div>
-                <div class="film-card">
-                    <div class="film-poster"><img src="posters/nannaku-prematho.jpg" onerror="this.style.display='none'"
-                            alt=""></div>
-                    <div class="film-info">
-                        <div class="film-title">Nannaku Prematho</div>
-                        <div class="film-year">2016 · Sukumar</div>
-                    </div>
-                </div>
-                <div class="film-card">
-                    <div class="film-poster"><img src="posters/janatha-garage.jpg" onerror="this.style.display='none'"
-                            alt=""></div>
-                    <div class="film-info">
-                        <div class="film-title">Janatha Garage</div>
-                        <div class="film-year">2016 · Koratala Siva</div>
-                    </div>
-                </div>
-                <div class="film-card">
-                    <div class="film-poster"><img src="posters/rrr.jpg" onerror="this.style.display='none'"
-                            alt=""></div>
-                    <div class="film-info">
-                        <div class="film-title">RRR</div>
-                        <div class="film-year">2022 · S.S. Rajamouli</div>
-                    </div>
-                </div>
-                <div class="film-card">
-                    <div class="film-poster"><img src="posters/aravinda-sametha.jpg" onerror="this.style.display='none'"
-                            alt=""></div>
-                    <div class="film-info">
-                        <div class="film-title">Aravinda Sametha</div>
-                        <div class="film-year">2018 · Trivikram</div>
-                    </div>
-                </div>
-                <div class="film-card">
-                    <div class="film-poster"><img src="posters/devara.jpg" onerror="this.style.display='none'"
-                            alt=""></div>
-                    <div class="film-info">
-                        <div class="film-title">Devara</div>
-                        <div class="film-year">2024 · Koratala Siva</div>
-                    </div>
-                </div>
+                <div class="film-card"><div class="film-poster"><img src="posters/simhadri.jpg" onerror="this.style.display='none'" alt=""></div><div class="film-info"><div class="film-title">Simhadri</div><div class="film-year">2003 · S.S. Rajamouli</div></div></div>
+                <div class="film-card"><div class="film-poster"><img src="posters/yamadonga.jpg" onerror="this.style.display='none'" alt=""></div><div class="film-info"><div class="film-title">Yamadonga</div><div class="film-year">2007 · S.S. Rajamouli</div></div></div>
+                <div class="film-card"><div class="film-poster"><img src="posters/baadshah.jpg" onerror="this.style.display='none'" alt=""></div><div class="film-info"><div class="film-title">Baadshah</div><div class="film-year">2013 · Srinu Vaitla</div></div></div>
+                <div class="film-card"><div class="film-poster"><img src="posters/nannaku-prematho.jpg" onerror="this.style.display='none'" alt=""></div><div class="film-info"><div class="film-title">Nannaku Prematho</div><div class="film-year">2016 · Sukumar</div></div></div>
+                <div class="film-card"><div class="film-poster"><img src="posters/janatha-garage.jpg" onerror="this.style.display='none'" alt=""></div><div class="film-info"><div class="film-title">Janatha Garage</div><div class="film-year">2016 · Koratala Siva</div></div></div>
+                <div class="film-card"><div class="film-poster"><img src="posters/aravinda-sametha.jpg" onerror="this.style.display='none'" alt=""></div><div class="film-info"><div class="film-title">Aravinda Sametha</div><div class="film-year">2018 · Trivikram</div></div></div>
+                <div class="film-card"><div class="film-poster"><img src="posters/rrr.jpg" onerror="this.style.display='none'" alt=""></div><div class="film-info"><div class="film-title">RRR</div><div class="film-year">2022 · S.S. Rajamouli</div></div></div>
+                <div class="film-card"><div class="film-poster"><img src="posters/devara.jpg" onerror="this.style.display='none'" alt=""></div><div class="film-info"><div class="film-title">Devara</div><div class="film-year">2024 · Koratala Siva</div></div></div>
             </div>
         </div>
 
-        <!-- Awards -->
-        <div class="about-section" style="padding-top: 0;">
-            <h2 class="section-heading">
-                Awards & Recognition <div class="section-heading-line"></div>
-            </h2>
+        <div class="about-section" style="padding-top:0">
+            <h2 class="section-heading">Awards & Recognition <div class="section-heading-line"></div></h2>
             <div class="awards-grid">
-                <div class="award-card">
-                    <div class="award-emoji">🏆</div>
-                    <div class="award-title">Filmfare Award — Best Actor</div>
-                    <div class="award-detail">Multiple wins including Temper (2015) & Janatha Garage (2016)</div>
-                </div>
-                <div class="award-card">
-                    <div class="award-emoji">🌟</div>
-                    <div class="award-title">SIIMA Best Actor</div>
-                    <div class="award-detail">South Indian International Movie Awards — multiple years</div>
-                </div>
-                <div class="award-card">
-                    <div class="award-emoji">🎭</div>
-                    <div class="award-title">CineMAA Best Actor</div>
-                    <div class="award-detail">Recognized as Best Actor at the prestigious CineMAA awards</div>
-                </div>
-                <div class="award-card">
-                    <div class="award-emoji">🎶</div>
-                    <div class="award-title">Academy Award Connection</div>
-                    <div class="award-detail">RRR's Naatu Naatu won the Oscar® for Best Original Song (2023)</div>
-                </div>
-                <div class="award-card">
-                    <div class="award-emoji">🌍</div>
-                    <div class="award-title">Global Recognition</div>
-                    <div class="award-detail">Named among most influential global film stars post RRR's worldwide
-                        success</div>
-                </div>
-                <div class="award-card">
-                    <div class="award-emoji">💫</div>
-                    <div class="award-title">Nandi Award</div>
-                    <div class="award-detail">Government of Andhra Pradesh — Best Actor recognition</div>
-                </div>
+                <div class="award-card"><div class="award-emoji">🏆</div><div class="award-title">Filmfare Award — Best Actor</div><div class="award-detail">Multiple wins including Temper (2015) & Janatha Garage (2016)</div></div>
+                <div class="award-card"><div class="award-emoji">🌟</div><div class="award-title">SIIMA Best Actor</div><div class="award-detail">South Indian International Movie Awards — multiple years</div></div>
+                <div class="award-card"><div class="award-emoji">🎭</div><div class="award-title">CineMAA Best Actor</div><div class="award-detail">Recognized as Best Actor at the prestigious CineMAA awards</div></div>
+                <div class="award-card"><div class="award-emoji">🎶</div><div class="award-title">Academy Award Connection</div><div class="award-detail">RRR's Naatu Naatu won the Oscar® for Best Original Song (2023)</div></div>
+                <div class="award-card"><div class="award-emoji">🌍</div><div class="award-title">Global Recognition</div><div class="award-detail">Named among most influential global film stars post RRR's worldwide success</div></div>
+                <div class="award-card"><div class="award-emoji">💫</div><div class="award-title">Nandi Award</div><div class="award-detail">Government of Andhra Pradesh — Best Actor recognition</div></div>
             </div>
         </div>
 
-        <!-- CTA -->
         <div class="cta-banner">
             <h2>🎵 Explore JR NTR's Full Music Collection</h2>
             <p>Sign in to unlock 150+ songs from 30+ films — from Simhadri to Devara</p>
-            <button class="cta-btn" onclick="openModal('signin')">
-                <span>🔓</span> Sign In to Listen
-            </button>
+            <button class="cta-btn" onclick="openModal('signin')"><span>🔓</span> Sign In to Listen</button>
         </div>
-
-    </div><!-- end #aboutPage -->
+    </div>
 
     <!-- ═══════════════ MUSIC APP PAGE ═══════════════ -->
     <div id="musicPage" class="hidden">
         <div class="main-content">
-
             <section class="hero-section">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
@@ -357,11 +198,11 @@
             <div class="filter-bar">
                 <div class="filter-scroll">
                     <button class="filter-chip active" data-decade="all">All Movies</button>
-                    <button class="filter-chip" data-decade="2001-2005">2001-2005</button>
-                    <button class="filter-chip" data-decade="2006-2010">2006-2010</button>
-                    <button class="filter-chip" data-decade="2011-2015">2011-2015</button>
-                    <button class="filter-chip" data-decade="2016-2020">2016-2020</button>
-                    <button class="filter-chip" data-decade="2021-2024">2021-2024</button>
+                    <button class="filter-chip" data-decade="2001-2005">2001–2005</button>
+                    <button class="filter-chip" data-decade="2006-2010">2006–2010</button>
+                    <button class="filter-chip" data-decade="2011-2015">2011–2015</button>
+                    <button class="filter-chip" data-decade="2016-2020">2016–2020</button>
+                    <button class="filter-chip" data-decade="2021-2024">2021–2024</button>
                 </div>
             </div>
 
@@ -373,7 +214,6 @@
                 </div>
             </div>
 
-            <!-- Library -->
             <div id="libraryView">
                 <div id="albumsSection">
                     <h2 class="section-title">Albums</h2>
@@ -393,18 +233,16 @@
                 </div>
             </div>
 
-            <!-- Gallery -->
             <div id="galleryView" class="hidden">
                 <h2 class="section-title">Photo Gallery</h2>
                 <div class="gallery-grid" id="galleryGrid"></div>
             </div>
-
         </div>
-    </div><!-- end #musicPage -->
+    </div>
 
-    <!-- Music Player -->
+    <!-- ═══════════════ MUSIC PLAYER ═══════════════ -->
     <div class="music-player" id="musicPlayer">
-        <div class="player-container">
+        <div class="player-container" id="playerContainer">
             <div class="player-album-art" id="playerAlbumArt">
                 <div class="album-art-placeholder">🎵</div>
             </div>
@@ -442,12 +280,10 @@
         <div class="lightbox-content" onclick="event.stopPropagation()">
             <div class="lightbox-image-container">
                 <img class="lightbox-poster" id="lightboxPoster" src="" alt="">
-                <div style="position:relative;">
-                    <button class="lightbox-nav lightbox-prev"
-                        onclick="event.stopPropagation();navigateLightbox(-1)">‹</button>
+                <div style="position:relative">
+                    <button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation();navigateLightbox(-1)">‹</button>
                     <img class="lightbox-image" id="lightboxImage" src="" alt="">
-                    <button class="lightbox-nav lightbox-next"
-                        onclick="event.stopPropagation();navigateLightbox(1)">›</button>
+                    <button class="lightbox-nav lightbox-next" onclick="event.stopPropagation();navigateLightbox(1)">›</button>
                 </div>
             </div>
             <div class="lightbox-info">
@@ -471,54 +307,21 @@
                     <button class="modal-tab active" id="tabSignin" onclick="switchTab('signin')">Sign In</button>
                     <button class="modal-tab" id="tabSignup" onclick="switchTab('signup')">Create Account</button>
                 </div>
-
-                <!-- Sign In -->
                 <div id="formSignin">
-                    <div class="form-group">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-input" id="siEmail" placeholder="you@example.com">
-                        <div class="err-msg" id="siEmailErr">Enter a valid email.</div>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Password</label>
-                        <input type="password" class="form-input" id="siPass" placeholder="Your password">
-                        <div class="err-msg" id="siPassErr">Password is required.</div>
-                        <span class="forgot-link" onclick="forgotPassword()">Forgot password?</span>
-                    </div>
+                    <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" id="siEmail" placeholder="you@example.com"><div class="err-msg" id="siEmailErr">Enter a valid email.</div></div>
+                    <div class="form-group"><label class="form-label">Password</label><input type="password" class="form-input" id="siPass" placeholder="Your password"><div class="err-msg" id="siPassErr">Password is required.</div><span class="forgot-link" onclick="forgotPassword()">Forgot password?</span></div>
                     <div class="general-err" id="siGenErr"></div>
                     <button class="btn-auth" id="btnSignin" onclick="doSignIn()">Sign In</button>
                     <div class="form-footer">No account? <a onclick="switchTab('signup')">Create one</a></div>
                 </div>
-
-                <!-- Sign Up -->
                 <div id="formSignup" class="hidden">
                     <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label">First Name</label>
-                            <input type="text" class="form-input" id="suFirst" placeholder="First">
-                            <div class="err-msg" id="suFirstErr">Required.</div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Last Name</label>
-                            <input type="text" class="form-input" id="suLast" placeholder="Last">
-                            <div class="err-msg" id="suLastErr">Required.</div>
-                        </div>
+                        <div class="form-group"><label class="form-label">First Name</label><input type="text" class="form-input" id="suFirst" placeholder="First"><div class="err-msg" id="suFirstErr">Required.</div></div>
+                        <div class="form-group"><label class="form-label">Last Name</label><input type="text" class="form-input" id="suLast" placeholder="Last"><div class="err-msg" id="suLastErr">Required.</div></div>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-input" id="suEmail" placeholder="you@example.com">
-                        <div class="err-msg" id="suEmailErr">Enter a valid email.</div>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Password</label>
-                        <input type="password" class="form-input" id="suPass" placeholder="Min 8 characters">
-                        <div class="err-msg" id="suPassErr">Min 8 characters.</div>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Confirm Password</label>
-                        <input type="password" class="form-input" id="suConfirm" placeholder="Re-enter password">
-                        <div class="err-msg" id="suConfirmErr">Passwords don't match.</div>
-                    </div>
+                    <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" id="suEmail" placeholder="you@example.com"><div class="err-msg" id="suEmailErr">Enter a valid email.</div></div>
+                    <div class="form-group"><label class="form-label">Password</label><input type="password" class="form-input" id="suPass" placeholder="Min 8 characters"><div class="err-msg" id="suPassErr">Min 8 characters.</div></div>
+                    <div class="form-group"><label class="form-label">Confirm Password</label><input type="password" class="form-input" id="suConfirm" placeholder="Re-enter password"><div class="err-msg" id="suConfirmErr">Passwords don't match.</div></div>
                     <div class="general-err" id="suGenErr"></div>
                     <button class="btn-auth" id="btnSignup" onclick="doSignUp()">Create Account</button>
                     <div class="form-footer">Have an account? <a onclick="switchTab('signin')">Sign in</a></div>
@@ -527,16 +330,12 @@
         </div>
     </div>
 
-    <!-- Toast -->
     <div class="toast" id="toast"><span id="toastIcon">✅</span><span id="toastMsg"></span></div>
-
     <audio id="audioPlayer" preload="metadata"></audio>
-
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-spinner"></div>
-        <p style="margin-top:20px;color:#98989D;">Loading...</p>
+        <p style="margin-top:20px;color:#98989D">Loading...</p>
     </div>
-
   <script src="./script.js"></script>
 </body>
 </html>
