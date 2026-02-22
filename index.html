@@ -9,333 +9,239 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-
-      
      
-   <!-- ═══════════════ NAVBAR ═══════════════ -->
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">
-                <span class="logo-icon">🎵</span>
-                <span class="logo-text">JR NTR Music</span>
+    <!-- ══════════════════════════════════════════════════════════
+     AUTH SCREEN
+══════════════════════════════════════════════════════════ -->
+    <div id="authScreen">
+        <div class="auth-wrap">
+            <div class="auth-logo">సంగీతం</div>
+            <div class="auth-sub">Telugu Music</div>
+            <div class="auth-tabs">
+                <div class="auth-tab active" id="tabSignin" onclick="switchTab('signin')">Sign In</div>
+                <div class="auth-tab" id="tabSignup" onclick="switchTab('signup')">Sign Up</div>
             </div>
+            <div class="auth-error" id="authError"></div>
 
-            <div class="nav-center hidden" id="navCenter">
-                <button class="nav-btn" data-view="library">Library</button>
-                <button class="nav-btn" data-view="gallery">Gallery</button>
-                <button class="nav-btn" data-view="search">Search</button>
-            </div>
-
-            <div class="user-badge hidden" id="userBadge">
-                <div class="user-avatar" id="userAvatarInitial">M</div>
-                <span class="user-name" id="navUserName">User</span>
-                <span class="user-chevron">▼</span>
-                <div class="user-menu" id="userMenu">
-                    <div class="user-menu-header">
-                        <div class="user-menu-fullname" id="menuFullName"></div>
-                        <div class="user-menu-email" id="menuEmail"></div>
-                    </div>
-                    <div class="user-menu-item" onclick="closeMenu()"><span>⚙️</span> Account Settings</div>
-                    <div class="user-menu-item" onclick="closeMenu()"><span>🎵</span> My Playlists</div>
-                    <div class="user-menu-divider"></div>
-                    <div class="user-menu-item danger" onclick="signOut()"><span>🚪</span> Sign Out</div>
+            <!-- SIGN IN -->
+            <div id="formSignin">
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input class="form-input" id="siEmail" type="email" placeholder="you@example.com"
+                        value="demo@sangeetham.app">
                 </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input class="form-input" id="siPass" type="password" placeholder="••••••••" value="demo1234">
+                </div>
+                <button class="btn-primary" onclick="doSignin()">Sign In →</button>
+                <div class="auth-hint">Demo: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e98d8c8486a99a88878e8c8c9d818884c7889999">[email&#160;protected]</a> / demo1234</div>
             </div>
 
-            <button class="signin-nav-btn" id="signinNavBtn" onclick="openModal('signin')">Sign In</button>
+            <!-- SIGN UP -->
+            <div id="formSignup" style="display:none;">
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input class="form-input" id="suName" type="text" placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input class="form-input" id="suEmail" type="email" placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input class="form-input" id="suPass" type="password" placeholder="Min 6 characters">
+                </div>
+                <button class="btn-primary" onclick="doSignup()">Create Account →</button>
+            </div>
+
+            <div class="auth-divider">or continue with</div>
+            <div class="social-row">
+                <button class="social-btn" onclick="quickLogin('Google')">🔵 Google</button>
+                <button class="social-btn" onclick="quickLogin('GitHub')">⚫ GitHub</button>
+            </div>
         </div>
-    </nav>
+    </div>
 
-    <!-- ═══════════════ ABOUT PAGE ═══════════════ -->
-    <div id="aboutPage">
-        <div class="about-hero">
-            <div class="about-hero-bg"></div>
-            <div class="about-hero-ring"></div>
-            <div class="about-hero-ring"></div>
-            <div class="about-hero-content">
-                <div class="about-left">
-                    <div class="about-tag">⭐ Young Tiger of Telugu Cinema</div>
-                    <h1 class="about-name">JR NTR</h1>
-                    <p class="about-nickname">Nandamuri Taraka Rama Rao Jr. · <span>Young Tiger</span></p>
-                    <p class="about-desc">One of Telugu cinema's most celebrated actors, Jr NTR has delivered
-                        blockbuster after blockbuster over two decades. Known for his powerhouse performances,
-                        electrifying dance moves, and versatile acting, he is the grandson of legendary actor-politician
-                        N.T. Rama Rao and a true heir to the Nandamuri legacy.</p>
-                    <div class="about-stats">
-                        <div class="stat-item"><span class="stat-num">30+</span><span class="stat-label">Films</span></div>
-                        <div class="stat-item"><span class="stat-num">150+</span><span class="stat-label">Songs</span></div>
-                        <div class="stat-item"><span class="stat-num">25+</span><span class="stat-label">Awards</span></div>
-                        <div class="stat-item"><span class="stat-num">2001</span><span class="stat-label">Debut</span></div>
-                    </div>
-                    <div class="about-actions">
-                        <button class="btn-gold" onclick="openModal('signin')"><span>🎵</span> Listen Now — Sign In</button>
-                        <button class="btn-outline" onclick="openModal('signup')"><span>✨</span> Create Account</button>
+    <!-- ══════════════════════════════════════════════════════════
+     APP
+══════════════════════════════════════════════════════════ -->
+    <div id="app">
+        <!-- TOP BAR -->
+        <div class="topbar">
+            <button class="ham-btn" onclick="toggleSidebar()">☰</button>
+            <div class="topbar-logo">సంగీతం</div>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input class="search-input" id="mainSearch" placeholder="Search songs, movies...">
+            </div>
+            <div class="topbar-right">
+                <span class="topbar-count" id="topbarCount"></span>
+                <div class="tb-btn" onclick="toggleTheme()" title="Toggle theme">🌙</div>
+                <!-- User avatar + dropdown -->
+                <div class="user-menu-wrap">
+                    <button class="user-avatar-btn" id="userAvatarBtn" onclick="toggleUserMenu()">D</button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="ud-header">
+                            <div class="ud-name" id="udName">Demo User</div>
+                            <div class="ud-email" id="udEmail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f094959d9fb083919e9795958498919dde918080">[email&#160;protected]</a></div>
+                        </div>
+                        <button class="ud-item" onclick="showLiked(null)">❤️ Liked Songs</button>
+                        <button class="ud-item" onclick="showRecent(null)">🕐 Recently Played</button>
+                        <button class="ud-item" onclick="toggleTheme()">🌙 Toggle Theme</button>
+                        <button class="ud-item danger" onclick="doSignout()">↩ Sign Out</button>
                     </div>
                 </div>
-                <div class="about-right">
-                    <div class="about-img-frame">
-                        <div class="about-img-glow"></div>
-                        <div class="about-img-card">
-                            <img src="posters/rrr.jpg" alt="Jr NTR"
-                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            </div>
+        </div>
+
+        <!-- BODY -->
+        <div class="body-wrap">
+            <!-- SIDEBAR -->
+            <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-nav">
+                    <div class="nav-section-title">Menu</div>
+                    <div class="nav-item active" id="navAll" onclick="showAll(this)"><span
+                            class="nav-icon">🎵</span><span>All Songs</span></div>
+                    <div class="nav-item" onclick="showLiked(this)"><span class="nav-icon">❤️</span><span>Liked
+                            Songs</span></div>
+                    <div class="nav-item" onclick="showRecent(this)"><span class="nav-icon">🕐</span><span>Recently
+                            Played</span></div>
+                    <div class="nav-section-title">Movies</div>
+                    <div id="movieNav"></div>
+                </div>
+                <div class="sidebar-bottom">
+                    <div class="theme-toggle" onclick="toggleTheme()">
+                        <span id="themeLabel">🌙 Dark Mode</span>
+                        <div class="toggle-track">
+                            <div class="toggle-thumb"></div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </aside>
 
-        <div class="about-section">
-            <h2 class="section-heading">Career Journey <div class="section-heading-line"></div></h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2001</div>
-                    <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-connector"></div></div>
-                    <div class="timeline-body">
-                        <div class="timeline-title">Debut — Student No. 1</div>
-                        <div class="timeline-desc">Made a stunning debut under S.S. Rajamouli with Student No. 1. Also appeared in Ninnu Choodalani and Subbu the same year.</div>
-                    </div>
+            <!-- MAIN -->
+            <div class="main-content">
+                <div class="scroll-area" id="scrollArea">
+                    <div id="heroArea"></div>
+                    <div id="galleryArea"></div>
+                    <div id="contentArea"></div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2003</div>
-                    <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-connector"></div></div>
-                    <div class="timeline-body">
-                        <div class="timeline-title">Simhadri — Breakthrough Blockbuster</div>
-                        <div class="timeline-desc">Rajamouli's Simhadri was a massive commercial success, giving NTR his first superhit as lead hero.</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2007</div>
-                    <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-connector"></div></div>
-                    <div class="timeline-body">
-                        <div class="timeline-title">Yamadonga — Fantasy Epic</div>
-                        <div class="timeline-desc">Another Rajamouli collaboration. The "Young Yama" character became iconic in Telugu pop culture.</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2013</div>
-                    <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-connector"></div></div>
-                    <div class="timeline-body">
-                        <div class="timeline-title">Ramayya Vasthavayya & Baadshah</div>
-                        <div class="timeline-desc">A phenomenal double blockbuster year cementing NTR as the "Young Tiger" of Telugu cinema.</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2016</div>
-                    <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-connector"></div></div>
-                    <div class="timeline-body">
-                        <div class="timeline-title">Nannaku Prematho & Janatha Garage</div>
-                        <div class="timeline-desc">"Follow Follow" became a cultural anthem. Janatha Garage proved his range as a serious actor.</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2022</div>
-                    <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-connector"></div></div>
-                    <div class="timeline-body">
-                        <div class="timeline-title">RRR — Global Recognition</div>
-                        <div class="timeline-desc">RRR took the world by storm. "Naatu Naatu" won the Academy Award for Best Original Song.</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2024</div>
-                    <div class="timeline-line"><div class="timeline-dot"></div></div>
-                    <div class="timeline-body">
-                        <div class="timeline-title">Devara — New Chapter</div>
-                        <div class="timeline-desc">Devara Part 1 directed by Koratala Siva marked another ambitious chapter with a powerful dual role.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="about-section" style="padding-top:0">
-            <h2 class="section-heading">Iconic Films <div class="section-heading-line"></div></h2>
-            <div class="films-grid">
-                <div class="film-card"><div class="film-poster"><img src="posters/simhadri.jpg" onerror="this.style.display='none'" alt=""></div><div class="film-info"><div class="film-title">Simhadri</div><div class="film-year">2003 · S.S. Rajamouli</div></div></div>
-                <div class="film-card"><div class="film-poster"><img src="posters/yamadonga.jpg" onerror="this.style.display='none'" alt=""></div><div class="film-info"><div class="film-title">Yamadonga</div><div class="film-year">2007 · S.S. Rajamouli</div></div></div>
-                <div class="film-card"><div class="film-poster"><img src="posters/baadshah.jpg" onerror="this.style.display='none'" alt=""></div><div class="film-info"><div class="film-title">Baadshah</div><div class="film-year">2013 · Srinu Vaitla</div></div></div>
-                <div class="film-card"><div class="film-poster"><img src="posters/nannaku-prematho.jpg" onerror="this.style.display='none'" alt=""></div><div class="film-info"><div class="film-title">Nannaku Prematho</div><div class="film-year">2016 · Sukumar</div></div></div>
-                <div class="film-card"><div class="film-poster"><img src="posters/janatha-garage.jpg" onerror="this.style.display='none'" alt=""></div><div class="film-info"><div class="film-title">Janatha Garage</div><div class="film-year">2016 · Koratala Siva</div></div></div>
-                <div class="film-card"><div class="film-poster"><img src="posters/aravinda-sametha.jpg" onerror="this.style.display='none'" alt=""></div><div class="film-info"><div class="film-title">Aravinda Sametha</div><div class="film-year">2018 · Trivikram</div></div></div>
-                <div class="film-card"><div class="film-poster"><img src="posters/rrr.jpg" onerror="this.style.display='none'" alt=""></div><div class="film-info"><div class="film-title">RRR</div><div class="film-year">2022 · S.S. Rajamouli</div></div></div>
-                <div class="film-card"><div class="film-poster"><img src="posters/devara.jpg" onerror="this.style.display='none'" alt=""></div><div class="film-info"><div class="film-title">Devara</div><div class="film-year">2024 · Koratala Siva</div></div></div>
-            </div>
-        </div>
-
-        <div class="about-section" style="padding-top:0">
-            <h2 class="section-heading">Awards & Recognition <div class="section-heading-line"></div></h2>
-            <div class="awards-grid">
-                <div class="award-card"><div class="award-emoji">🏆</div><div class="award-title">Filmfare Award — Best Actor</div><div class="award-detail">Multiple wins including Temper (2015) & Janatha Garage (2016)</div></div>
-                <div class="award-card"><div class="award-emoji">🌟</div><div class="award-title">SIIMA Best Actor</div><div class="award-detail">South Indian International Movie Awards — multiple years</div></div>
-                <div class="award-card"><div class="award-emoji">🎭</div><div class="award-title">CineMAA Best Actor</div><div class="award-detail">Recognized as Best Actor at the prestigious CineMAA awards</div></div>
-                <div class="award-card"><div class="award-emoji">🎶</div><div class="award-title">Academy Award Connection</div><div class="award-detail">RRR's Naatu Naatu won the Oscar® for Best Original Song (2023)</div></div>
-                <div class="award-card"><div class="award-emoji">🌍</div><div class="award-title">Global Recognition</div><div class="award-detail">Named among most influential global film stars post RRR's worldwide success</div></div>
-                <div class="award-card"><div class="award-emoji">💫</div><div class="award-title">Nandi Award</div><div class="award-detail">Government of Andhra Pradesh — Best Actor recognition</div></div>
-            </div>
-        </div>
-
-        <div class="cta-banner">
-            <h2>🎵 Explore JR NTR's Full Music Collection</h2>
-            <p>Sign in to unlock 150+ songs from 30+ films — from Simhadri to Devara</p>
-            <button class="cta-btn" onclick="openModal('signin')"><span>🔓</span> Sign In to Listen</button>
-        </div>
-    </div>
-
-    <!-- ═══════════════ MUSIC APP PAGE ═══════════════ -->
-    <div id="musicPage" class="hidden">
-        <div class="main-content">
-            <section class="hero-section">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <div class="hero-welcome" id="heroWelcome">Welcome back!</div>
-                    <h1 class="hero-title">JR NTR</h1>
-                    <p class="hero-subtitle">Young Tiger · 30+ Films · 150+ Songs</p>
-                    <div class="hero-actions">
-                        <button class="btn-primary" onclick="playAll()"><span>▶</span> Play All</button>
-                        <button class="btn-secondary" onclick="shufflePlay()"><span>🔀</span> Shuffle</button>
+                <!-- DESKTOP PLAYER -->
+                <div class="player" id="bottomPlayer" style="visibility:hidden;">
+                    <audio id="audioEl"></audio>
+                    <div class="p-song">
+                        <div class="p-thumb" id="pThumb">🎵</div>
+                        <div class="p-info">
+                            <div class="p-title" id="pTitle">—</div>
+                            <div class="p-artist" id="pArtist">—</div>
+                        </div>
+                        <button class="p-like" id="pLikeBtn" onclick="toggleLikeCurrent()">♡</button>
                     </div>
-                </div>
-            </section>
-
-            <div class="filter-bar">
-                <div class="filter-scroll">
-                    <button class="filter-chip active" data-decade="all">All Movies</button>
-                    <button class="filter-chip" data-decade="2001-2005">2001–2005</button>
-                    <button class="filter-chip" data-decade="2006-2010">2006–2010</button>
-                    <button class="filter-chip" data-decade="2011-2015">2011–2015</button>
-                    <button class="filter-chip" data-decade="2016-2020">2016–2020</button>
-                    <button class="filter-chip" data-decade="2021-2024">2021–2024</button>
-                </div>
-            </div>
-
-            <div class="search-container">
-                <div class="search-box">
-                    <span>🔍</span>
-                    <input type="text" class="search-input" id="searchInput" placeholder="Search songs, movies...">
-                    <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
-                </div>
-            </div>
-
-            <div id="libraryView">
-                <div id="albumsSection">
-                    <h2 class="section-title">Albums</h2>
-                    <div class="albums-grid" id="albumsGrid"></div>
-                    <div class="no-results hidden" id="noAlbumsResults">
-                        <div class="no-results-icon">🎬</div>
-                        <div class="no-results-title">No albums found</div>
+                    <div class="p-center">
+                        <div class="p-btns">
+                            <button class="pb active" id="shuffleBtn" onclick="toggleShuffle()">🔀</button>
+                            <button class="pb" onclick="playPrev()">⏮</button>
+                            <button class="pb play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+                            <button class="pb" onclick="playNext()">⏭</button>
+                            <button class="pb" id="repeatBtn" onclick="toggleRepeat()">🔁</button>
+                        </div>
+                        <div class="p-progress">
+                            <span class="pt" id="pCur">0:00</span>
+                            <div class="prog" onclick="seekAudio(event)">
+                                <div class="prog-fill" id="progFill" style="width:0%"></div>
+                            </div>
+                            <span class="pt r" id="pTot">0:00</span>
+                        </div>
                     </div>
-                </div>
-                <div id="songsSection">
-                    <h2 class="section-title">All Songs</h2>
-                    <div class="songs-list" id="songsList"></div>
-                    <div class="no-results hidden" id="noSongsResults">
-                        <div class="no-results-icon">🎵</div>
-                        <div class="no-results-title">No songs found</div>
+                    <div class="p-right">
+                        <div class="vol-wrap">
+                            <span class="vol-icon">🔊</span>
+                            <input type="range" class="vol-slider" id="volSlider" min="0" max="100" value="80"
+                                oninput="setVolume(this.value)">
+                        </div>
+                        <button class="np-toggle active" id="npToggleBtn" onclick="toggleNowPlaying()">≡</button>
                     </div>
                 </div>
             </div>
 
-            <div id="galleryView" class="hidden">
-                <h2 class="section-title">Photo Gallery</h2>
-                <div class="gallery-grid" id="galleryGrid"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ═══════════════ MUSIC PLAYER ═══════════════ -->
-    <div class="music-player" id="musicPlayer">
-        <div class="player-container" id="playerContainer">
-            <div class="player-album-art" id="playerAlbumArt">
-                <div class="album-art-placeholder">🎵</div>
-            </div>
-            <div class="player-info">
-                <div class="player-song-name" id="playerSongName">Song Title</div>
-                <div class="player-artist" id="playerArtist">Movie · Jr NTR</div>
-            </div>
-            <div class="player-controls">
-                <button class="control-btn" onclick="previousSong()">⏮</button>
-                <button class="control-play" onclick="togglePlay()" id="playBtn">▶</button>
-                <button class="control-btn" onclick="nextSong()">⏭</button>
-            </div>
-            <div class="player-progress">
-                <span class="time-label" id="currentTime">0:00</span>
-                <div class="progress-track" id="progressTrack">
-                    <div class="progress-fill" id="progressFill"></div>
+            <!-- NOW PLAYING PANEL -->
+            <div class="np-panel" id="npPanel">
+                <div class="np-header">Now Playing</div>
+                <div class="np-art-wrap">
+                    <div class="np-art" id="npArt"><span id="npArtInner">🎵</span></div>
                 </div>
-                <span class="time-label" id="duration">0:00</span>
-            </div>
-            <div class="player-actions">
-                <div class="volume-control">
-                    <div class="volume-icon" id="volumeIcon" onclick="toggleMute()">🔊</div>
-                    <div class="volume-track" id="volumeTrack">
-                        <div class="volume-fill" id="volumeFill"></div>
-                        <div class="volume-thumb" id="volumeThumb"></div>
+                <div class="np-info">
+                    <div class="np-title" id="npTitle">Select a song</div>
+                    <div class="np-artist" id="npArtist">—</div>
+                    <div class="np-movie" id="npMovieLabel"></div>
+                </div>
+                <div class="np-progress">
+                    <div class="progress-bar" onclick="seekAudio(event)">
+                        <div class="progress-fill" id="npProgFill" style="width:0%">
+                            <div class="progress-thumb"></div>
+                        </div>
                     </div>
+                    <div class="progress-times"><span class="ptime" id="npCur">0:00</span><span class="ptime"
+                            id="npTot">0:00</span></div>
+                </div>
+                <div class="np-controls">
+                    <button class="nc-btn" onclick="playPrev()">⏮</button>
+                    <button class="nc-btn play" id="npPlayBtn" onclick="togglePlay()">▶</button>
+                    <button class="nc-btn" onclick="playNext()">⏭</button>
+                </div>
+                <div class="np-queue">
+                    <div class="np-queue-title">Up Next</div>
+                    <div id="queueList"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()">×</button>
-        <div class="lightbox-content" onclick="event.stopPropagation()">
-            <div class="lightbox-image-container">
-                <img class="lightbox-poster" id="lightboxPoster" src="" alt="">
-                <div style="position:relative">
-                    <button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation();navigateLightbox(-1)">‹</button>
-                    <img class="lightbox-image" id="lightboxImage" src="" alt="">
-                    <button class="lightbox-nav lightbox-next" onclick="event.stopPropagation();navigateLightbox(1)">›</button>
-                </div>
-            </div>
-            <div class="lightbox-info">
-                <div class="lightbox-title" id="lightboxTitle"></div>
-                <div class="lightbox-counter" id="lightboxCounter"></div>
-            </div>
+    <!-- MOBILE MINI PLAYER — volume + prev/next always visible -->
+    <div class="mini-player" id="miniPlayer">
+        <div class="mp-thumb" id="mpThumb">🎵</div>
+        <div class="mp-info">
+            <div class="mp-title" id="mpTitle">—</div>
+            <div class="mp-movie" id="mpMovie">—</div>
+        </div>
+        <div class="mp-controls-row">
+            <button class="mp-prev" onclick="playPrev()">⏮</button>
+            <button class="mp-play" id="mpPlayBtn" onclick="togglePlay()">▶</button>
+            <button class="mp-next" onclick="playNext()">⏭</button>
+        </div>
+        <div class="mp-vol-wrap">
+            <span class="mp-vol-icon">🔊</span>
+            <input type="range" class="mp-vol-slider" id="mpVolSlider" min="0" max="100" value="80"
+                oninput="setVolume(this.value)">
         </div>
     </div>
 
-    <!-- Auth Modal -->
-    <div class="modal-backdrop" id="modalBackdrop">
-        <div class="auth-modal">
-            <div class="modal-header">
-                <button class="modal-close" onclick="closeModal()">✕</button>
-                <div class="modal-logo">🎵</div>
-                <div class="modal-title">JR NTR Music</div>
-                <div class="modal-subtitle">Your Musical Journey Awaits</div>
-            </div>
-            <div class="modal-body">
-                <div class="modal-tabs">
-                    <button class="modal-tab active" id="tabSignin" onclick="switchTab('signin')">Sign In</button>
-                    <button class="modal-tab" id="tabSignup" onclick="switchTab('signup')">Create Account</button>
-                </div>
-                <div id="formSignin">
-                    <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" id="siEmail" placeholder="you@example.com"><div class="err-msg" id="siEmailErr">Enter a valid email.</div></div>
-                    <div class="form-group"><label class="form-label">Password</label><input type="password" class="form-input" id="siPass" placeholder="Your password"><div class="err-msg" id="siPassErr">Password is required.</div><span class="forgot-link" onclick="forgotPassword()">Forgot password?</span></div>
-                    <div class="general-err" id="siGenErr"></div>
-                    <button class="btn-auth" id="btnSignin" onclick="doSignIn()">Sign In</button>
-                    <div class="form-footer">No account? <a onclick="switchTab('signup')">Create one</a></div>
-                </div>
-                <div id="formSignup" class="hidden">
-                    <div class="form-row">
-                        <div class="form-group"><label class="form-label">First Name</label><input type="text" class="form-input" id="suFirst" placeholder="First"><div class="err-msg" id="suFirstErr">Required.</div></div>
-                        <div class="form-group"><label class="form-label">Last Name</label><input type="text" class="form-input" id="suLast" placeholder="Last"><div class="err-msg" id="suLastErr">Required.</div></div>
-                    </div>
-                    <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" id="suEmail" placeholder="you@example.com"><div class="err-msg" id="suEmailErr">Enter a valid email.</div></div>
-                    <div class="form-group"><label class="form-label">Password</label><input type="password" class="form-input" id="suPass" placeholder="Min 8 characters"><div class="err-msg" id="suPassErr">Min 8 characters.</div></div>
-                    <div class="form-group"><label class="form-label">Confirm Password</label><input type="password" class="form-input" id="suConfirm" placeholder="Re-enter password"><div class="err-msg" id="suConfirmErr">Passwords don't match.</div></div>
-                    <div class="general-err" id="suGenErr"></div>
-                    <button class="btn-auth" id="btnSignup" onclick="doSignUp()">Create Account</button>
-                    <div class="form-footer">Have an account? <a onclick="switchTab('signin')">Sign in</a></div>
-                </div>
-            </div>
+    <!-- MOBILE BOTTOM NAV -->
+    <nav class="mobile-nav">
+        <div class="mobile-nav-inner">
+            <button class="mn-item active" id="mnHome" onclick="mobileNav('home',this)"><span
+                    class="mn-icon">🏠</span><span class="mn-label">Home</span></button>
+            <button class="mn-item" id="mnMovies" onclick="mobileNav('movies',this)"><span
+                    class="mn-icon">🎬</span><span class="mn-label">Movies</span></button>
+            <button class="mn-item" id="mnLiked" onclick="mobileNav('liked',this)"><span class="mn-icon">❤️</span><span
+                    class="mn-label">Liked</span></button>
+            <button class="mn-item" id="mnProfile" onclick="mobileNav('profile',this)"><span
+                    class="mn-icon">👤</span><span class="mn-label">Profile</span></button>
         </div>
+    </nav>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close">✕</button>
+        <img id="lightboxImg" src="" alt="">
     </div>
 
-    <div class="toast" id="toast"><span id="toastIcon">✅</span><span id="toastMsg"></span></div>
-    <audio id="audioPlayer" preload="metadata"></audio>
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner"></div>
-        <p style="margin-top:20px;color:#98989D">Loading...</p>
-    </div>
+    <div class="toast-wrap" id="toastWrap"></div>
+
+
   <script src="./script.js"></script>
 </body>
 </html>
