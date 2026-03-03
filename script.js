@@ -138,10 +138,41 @@ function syncNpPanel() {
 function initApp() {
     buildMovieNav();
     setupLikeDelegation();
+    preloadDurations();
     showAll(document.getElementById('navAll'));
     document.getElementById('topbarCount').textContent = `${ALL_SONGS.length} songs`;
     const th = localStorage.getItem('sg_theme');
     if (th) { document.documentElement.dataset.theme = th; updateThemeUI(th); }
+}
+
+// ── DURATION PRELOAD ───────────────────────────────────────────────────────────
+function preloadDurations() {
+    const tempAudio = new Audio();
+    let loadedCount = 0;
+    
+    ALL_SONGS.forEach((song, index) => {
+        const audio = new Audio();
+        audio.addEventListener('loadedmetadata', () => {
+            song.duration = Math.round(audio.duration) || 0;
+            loadedCount++;
+            if (loadedCount === ALL_SONGS.length) {
+                // All durations loaded, refresh display if needed
+                if (STATE.filtered.length > 0) {
+                    renderSongs(STATE.filtered);
+                }
+            }
+        });
+        audio.addEventListener('error', () => {
+            song.duration = 0;
+            loadedCount++;
+            if (loadedCount === ALL_SONGS.length) {
+                if (STATE.filtered.length > 0) {
+                    renderSongs(STATE.filtered);
+                }
+            }
+        });
+        audio.src = song.file;
+    });
 }
 
 // ── LIKE DELEGATION ───────────────────────────────────────────────────────────
