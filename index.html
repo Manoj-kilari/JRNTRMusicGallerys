@@ -3,245 +3,434 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jr NTR Music Gallery - Complete Filmography</title>
- <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
+    <title>JRNTR Music</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png">
 </head>
 <body>
-     
-    <!-- ══════════════════════════════════════════════════════════
-     AUTH SCREEN
-══════════════════════════════════════════════════════════ -->
-    <div id="authScreen">
-        <div class="auth-wrap">
-            <div class="auth-logo">సంగీతం</div>
-            <div class="auth-sub">Telugu Music</div>
-            <div class="auth-tabs">
-                <div class="auth-tab active" id="tabSignin" onclick="switchTab('signin')">Sign In</div>
-                <div class="auth-tab" id="tabSignup" onclick="switchTab('signup')">Sign Up</div>
-            </div>
-            <div class="auth-error" id="authError"></div>
 
-            <!-- SIGN IN -->
-            <div id="formSignin">
-                <div class="form-group">
-                    <label class="form-label">Email</label>
-                    <input class="form-input" id="siEmail" type="email" placeholder="you@example.com"
-                        value="demo@sangeetham.app">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Password</label>
-                    <input class="form-input" id="siPass" type="password" placeholder="••••••••" value="demo1234">
-                </div>
-                <button class="btn-primary" onclick="doSignin()">Sign In →</button>
-                <div class="auth-hint">Demo: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e98d8c8486a99a88878e8c8c9d818884c7889999">[email&#160;protected]</a> / demo1234</div>
+    <!-- Top Navigation Bar -->
+    <header class="top-nav">
+
+        <!-- LEFT: Apple Music logo -->
+        <div class="nav-left">
+            <!-- Hamburger (mobile only) -->
+            <button class="mobile-menu-btn" onclick="openMobileMenu()" aria-label="Menu">
+                <svg width="22" height="16" viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1h20M1 8h20M1 15h20" stroke="#fc3c44" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="jrntr-music-logo">
+                <img src="./favicon.png" alt="JRNTR Logo" class="nav-logo-img">
+                <span class="music-text">Music</span>
+            </div>
+        </div>
+
+        <!-- CENTER: controls + album art + apple logo + progress + volume -->
+        <div class="nav-center">
+
+            <!-- Mobile center title (Apple logo + Music) -->
+            <div class="mobile-center-title">
+                <img src="./favicon.png" alt="" style="height:18px; width:auto;">
+                <span style="font-size:19px; font-weight:700; letter-spacing:-0.4px;">Music</span>
             </div>
 
-            <!-- SIGN UP -->
-            <div id="formSignup" style="display:none;">
-                <div class="form-group">
-                    <label class="form-label">Full Name</label>
-                    <input class="form-input" id="suName" type="text" placeholder="Your name">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Email</label>
-                    <input class="form-input" id="suEmail" type="email" placeholder="you@example.com">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Password</label>
-                    <input class="form-input" id="suPass" type="password" placeholder="Min 6 characters">
-                </div>
-                <button class="btn-primary" onclick="doSignup()">Create Account →</button>
+            <!-- Playback controls: shuffle | prev | play | next | repeat -->
+            <div class="playback-controls">
+                <button class="control-btn shuffle" title="Shuffle">
+                    <svg width="18" height="16" viewBox="0 0 32 28" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.767 20.44a.81.81 0 00.49-.183l2.58-2.174c.316-.266.316-.681 0-.955l-2.58-2.183a.81.81 0 00-.49-.183c-.415 0-.673.258-.673.673v1.245h-1.162c-.739 0-1.195-.233-1.718-.847l-1.527-1.801 1.527-1.81c.54-.63.946-.847 1.677-.847h1.203v1.279c0 .407.258.664.673.664a.801.801 0 00.49-.174l2.58-2.175c.316-.266.316-.69 0-.955l-2.58-2.183a.761.761 0 00-.49-.183c-.415 0-.673.258-.673.665v1.386h-1.212c-1.228 0-1.992.34-2.863 1.386l-1.412 1.668-1.469-1.751c-.805-.946-1.569-1.303-2.747-1.303H8.896c-.53 0-.896.348-.896.838s.365.838.896.838h1.437c.697 0 1.162.225 1.685.847l1.519 1.801-1.52 1.81c-.53.623-.954.847-1.643.847H8.896c-.53 0-.896.348-.896.838s.365.838.896.838h1.536c1.179 0 1.901-.356 2.706-1.303l1.478-1.751 1.444 1.718c.822.98 1.627 1.336 2.822 1.336h1.212v1.412c0 .415.258.672.673.672z"/>
+                    </svg>
+                </button>
+                <button class="control-btn prev-btn" title="Previous">
+                    <svg width="18" height="16" viewBox="0 0 32 28" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.86 20.68c-.365 0-.672-.107-1.038-.323l-8.508-4.997c-.623-.365-.938-.814-.938-1.37 0-.564.307-.988.938-1.361l8.508-4.997c.366-.216.68-.324 1.046-.324.73 0 1.337.556 1.337 1.569v4.773c.108-.399.406-.73.904-1.021l8.509-4.997c.357-.216.672-.324 1.037-.324.73 0 1.345.556 1.345 1.569v10.235c0 1.013-.614 1.569-1.345 1.569-.365 0-.68-.108-1.037-.324l-8.509-4.997c-.49-.29-.796-.631-.904-1.038v4.79c0 1.013-.615 1.569-1.345 1.569z"/>
+                    </svg>
+                </button>
+                <button class="control-btn play-pause" title="Play/Pause">
+                    <svg id="playPauseIcon" viewBox="0 0 32 28" xmlns="http://www.w3.org/2000/svg" width="20" height="18">
+                        <path d="M8.5 6.5l15 7.5-15 7.5V6.5z"/>
+                    </svg>
+                </button>
+                <button class="control-btn next-btn" title="Next">
+                    <svg width="18" height="16" viewBox="0 0 32 28" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.14 20.68c.365 0 .672-.107 1.038-.323l8.508-4.997c.623-.365.938-.814.938-1.37 0-.564-.307-.988-.938-1.361l-8.508-4.997c-.366-.216-.68-.324-1.046-.324-.73 0-1.337.556-1.337 1.569v4.773c-.108-.399-.406-.73-.904-1.021L7.382 7.632c-.357-.216-.672-.324-1.037-.324-.73 0-1.345.556-1.345 1.569v10.235c0 1.013.614 1.569 1.345 1.569.365 0 .68-.108 1.037-.324l8.509-4.997c.49-.29.796-.631.904-1.038v4.79c0 1.013.615 1.569 1.345 1.569z"/>
+                    </svg>
+                </button>
+                <button class="control-btn repeat" title="Repeat">
+                    <svg width="18" height="16" viewBox="0 0 32 28" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.545 14.272a.856.856 0 00.863-.855v-.448c0-1.004.706-1.677 1.785-1.677h5.005v1.362c0 .407.258.664.673.664a.745.745 0 00.49-.183l2.581-2.166c.316-.266.316-.69 0-.955l-2.581-2.183a.745.745 0 00-.49-.183c-.415 0-.672.258-.672.665v1.294h-4.881c-2.217 0-3.628 1.254-3.628 3.213v.597c0 .474.382.855.855.855zm4.864 5.952c.407 0 .664-.257.664-.664v-1.303h4.881c2.225 0 3.628-1.254 3.628-3.213v-.597a.854.854 0 10-1.71 0v.448c0 1.004-.714 1.677-1.793 1.677h-5.006v-1.353c0-.407-.257-.664-.664-.664a.767.767 0 00-.498.182l-2.573 2.175c-.324.257-.315.68 0 .946l2.573 2.192a.807.807 0 00.498.174z"/>
+                    </svg>
+                </button>
             </div>
 
-            <div class="auth-divider">or continue with</div>
-            <div class="social-row">
-                <button class="social-btn" onclick="quickLogin('Google')">🔵 Google</button>
-                <button class="social-btn" onclick="quickLogin('GitHub')">⚫ GitHub</button>
+            <!-- Album art thumbnail (grey box when nothing playing) -->
+            <div class="nav-album-art">
+                <img id="navPoster" src="" alt="" style="display:none; width:100%; height:100%; object-fit:cover; object-position:center top;">
+                <svg id="navMusicNote" viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 17H5a2 2 0 0 0 0 4h2a2 2 0 0 0 2-2v-9l10-2v7h-4a2 2 0 0 0 0 4h2a2 2 0 0 0 2-2V5L9 7v10z" fill="#aaa"/>
+                </svg>
+            </div>
+
+            <!-- Now playing text + progress bar -->
+            <div class="nav-now-playing-block">
+                <div class="nav-song-info">
+                    <span id="navSongName" class="nav-song-name">Not Playing</span>
+                    <span id="navMovieName" class="nav-movie-name"></span>
+                </div>
+                <div class="progress-container">
+                    <span class="current-time">0:00</span>
+                    <div class="progress-track" id="progressTrack">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <span class="total-time">0:00</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RIGHT: volume + icons + profile -->
+        <div class="nav-right">
+            <div class="volume-control">
+                <svg width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" fill="#86868b"/>
+                </svg>
+                <input type="range" class="volume-slider" min="0" max="100" value="50">
+                <svg width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" fill="#86868b"/>
+                </svg>
+            </div>
+
+            <!-- Lyrics / chat icon -->
+            <div class="nav-right-item" title="Lyrics">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="m9.67 13.982-2.43 2.474c-.472.471-.79.675-1.145.675-.479 0-.623-.314-.623-1.012v-2.137H5.26c-1.406 0-1.915-.146-2.429-.42a2.877 2.877 0 0 1-1.192-1.192c-.274-.514-.421-1.024-.421-2.429V6.464c0-1.405.147-1.915.421-2.428a2.872 2.872 0 0 1 1.192-1.192c.514-.275 1.023-.421 2.429-.421h7.68c1.406 0 1.915.146 2.429.421a2.86 2.86 0 0 1 1.192 1.192c.274.513.421 1.023.421 2.428v3.477c0 1.405-.147 1.915-.421 2.429a2.866 2.866 0 0 1-1.192 1.192c-.514.274-1.023.42-2.429.42H9.67Zm-.974-.957c.257-.261.608-.408.974-.408h3.27c1.076 0 1.426-.068 1.785-.26.276-.147.484-.356.631-.632.192-.358.26-.709.26-1.784V6.464c0-1.075-.068-1.426-.26-1.784a1.49 1.49 0 0 0-.631-.631c-.359-.192-.709-.26-1.785-.26H5.26c-1.075 0-1.425.068-1.785.26a1.5 1.5 0 0 0-.631.631c-.192.358-.26.709-.26 1.784v3.477c0 1.075.068 1.426.26 1.784.148.276.356.485.631.632.36.192.71.26 1.785.26h.212c.754 0 1.365.611 1.365 1.365v.934l1.859-1.891Z" fill="#86868b"/></svg>
+            </div>
+
+            <!-- Queue icon -->
+            <div class="nav-right-item" title="Up Next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                    <path d="M2.634 5.537a.906.906 0 1 0 0-1.813.906.906 0 1 0 0 1.813zm3.192-.325h9.865a.576.576 0 0 0 .585-.578.578.578 0 0 0-.585-.585H5.826a.574.574 0 0 0-.585.585c0 .325.253.578.585.578zM2.634 9.906c.506 0 .91-.404.91-.91a.906.906 0 0 0-.91-.91.906.906 0 0 0-.91.91c0 .506.405.91.91.91zm3.192-.325h9.865a.582.582 0 1 0 0-1.162H5.826a.572.572 0 0 0-.585.577c0 .325.253.585.585.585zm-3.192 4.694a.91.91 0 1 0-.001-1.82.91.91 0 0 0 0 1.82zm3.192-.332h9.865a.576.576 0 0 0 .585-.577.578.578 0 0 0-.585-.585H5.826a.574.574 0 0 0-.585.585c0 .324.253.577.585.577z" fill="#86868b"/>
+                </svg>
+            </div>
+
+            <!-- Profile -->
+            <div class="nav-right-item profile-icon" title="Account">
+                <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                    <path d="M14.007 28C6.299 28 0 21.703 0 14S6.299 0 14.007 0C21.7 0 28 6.297 28 14s-6.299 14-13.993 14zm0-9.392c4.253 0 7.49 1.514 8.805 3.216 1.815-2.08 2.899-4.81 2.899-7.824 0-6.54-5.12-11.784-11.704-11.784C7.41 2.216 2.289 7.46 2.289 14c0 3.014 1.084 5.743 2.9 7.824 1.313-1.702 4.55-3.216 8.818-3.216zm-.014-2.297c-2.6-.027-4.646-2.19-4.646-5.095-.014-2.73 2.059-4.986 4.646-4.986 2.601 0 4.647 2.256 4.647 4.986 0 2.906-2.032 5.122-4.647 5.095z" fill="#ff3b30"/>
+                </svg>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <!-- Search -->
+            <div class="search-bar">
+                <svg class="search-svg-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.5 1a5.5 5.5 0 1 1 0 11A5.5 5.5 0 0 1 6.5 1zm0 1a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zm4.144 8.136l.707.707 2.856 2.856-.707.707-2.856-2.856-.707-.707.707-.707z" fill="#86868b" fill-rule="nonzero"/>
+                </svg>
+                <input type="text" id="searchInput" placeholder="Search" oninput="filterSongs(this.value)">
+            </div>
+
+            <!-- Main nav -->
+            <nav class="main-nav">
+                <a href="#" class="nav-item active" id="nav-home" onclick="setActive(this); showSection('home'); return false;">
+                    <span class="nav-svg-icon">
+                        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2.5L2 9v9h5.5v-5h5v5H18V9L10 2.5z" fill="currentColor"/></svg>
+                    </span>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item" id="nav-new" onclick="setActive(this); showSection('allsongs'); return false;">
+                    <span class="nav-svg-icon">
+                        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="7" height="7" rx="1" fill="currentColor"/><rect x="11" y="2" width="7" height="7" rx="1" fill="currentColor"/><rect x="2" y="11" width="7" height="7" rx="1" fill="currentColor"/><rect x="11" y="11" width="7" height="7" rx="1" fill="currentColor"/></svg>
+                    </span>
+                    <span>New</span>
+                </a>
+                <a href="#" class="nav-item" id="nav-radio" onclick="setActive(this); return false;">
+                    <span class="nav-svg-icon">
+                        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="2.5" fill="currentColor"/><path d="M10 4a6 6 0 0 1 6 6h-1.5A4.5 4.5 0 0 0 10 5.5V4zm0 0a6 6 0 0 0-6 6H5.5A4.5 4.5 0 0 1 10 5.5V4zm0-2.5a8.5 8.5 0 0 1 8.5 8.5H17A7 7 0 0 0 10 3V1.5zm0 0A8.5 8.5 0 0 0 1.5 10H3A7 7 0 0 1 10 3V1.5z" fill="currentColor"/></svg>
+                    </span>
+                    <span>Radio</span>
+                </a>
+            </nav>
+
+            <!-- Library section -->
+            <div class="nav-section">
+                <h3>Library</h3>
+                <nav class="library-nav">
+                    <a href="#" class="nav-item" onclick="setActive(this); showSection('recentlyadded'); return false;">
+                        <span class="nav-svg-icon">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5" fill="none"/><polyline points="10,6 10,10 13,13" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+                        </span>
+                        <span>Recently Added</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="setActive(this); return false;">
+                        <span class="nav-svg-icon">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="6" r="3" fill="currentColor"/><path d="M3 17c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/><line x1="15" y1="11" x2="15" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </span>
+                        <span>Artists</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="setActive(this); showSection('movies'); return false;">
+                        <span class="nav-svg-icon">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="14" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="3" y1="8" x2="17" y2="8" stroke="currentColor" stroke-width="1.2"/><line x1="7" y1="4" x2="7" y2="8" stroke="currentColor" stroke-width="1.2"/><line x1="13" y1="4" x2="13" y2="8" stroke="currentColor" stroke-width="1.2"/></svg>
+                        </span>
+                        <span>Albums</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="setActive(this); showSection('allsongs'); return false;">
+                        <span class="nav-svg-icon">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8 15V5l9-2v10" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="5.5" cy="15" r="2.5" fill="currentColor"/><circle cx="14.5" cy="13" r="2.5" fill="currentColor"/></svg>
+                        </span>
+                        <span>Songs</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="setActive(this); return false;">
+                        <span class="nav-svg-icon">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="16" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/><polygon points="8,7 8,13 14,10" fill="currentColor"/></svg>
+                        </span>
+                        <span>Music Videos</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="setActive(this); return false;">
+                        <span class="nav-svg-icon">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="7" r="3.5" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M2.5 18c0-4.142 3.358-7.5 7.5-7.5s7.5 3.358 7.5 7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M14 12l1.5 1.5M14 15l1.5-1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                        </span>
+                        <span>Made for You</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Playlists section -->
+            <div class="nav-section">
+                <h3>Playlists</h3>
+                <nav class="playlist-nav">
+                    <a href="#" class="nav-item" onclick="setActive(this); return false;">
+                        <span class="nav-svg-icon">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="6" height="6" rx="1" fill="currentColor"/><rect x="12" y="2" width="6" height="6" rx="1" fill="currentColor"/><rect x="2" y="12" width="6" height="6" rx="1" fill="currentColor"/><rect x="12" y="12" width="6" height="6" rx="1" fill="currentColor"/></svg>
+                        </span>
+                        <span>All Playlists</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Open in Music button -->
+            <div class="open-in-music">
+                <button class="open-btn">
+                    <span class="open-btn-icon">
+                        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8 15V5l9-2v10" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="5.5" cy="15" r="2.5" fill="currentColor"/><circle cx="14.5" cy="13" r="2.5" fill="currentColor"/></svg>
+                    </span>
+                    <span>Open in Music</span>
+                    <svg class="open-btn-arrow" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M3 9L9 3M9 3H5M9 3v4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content">
+
+            <!-- HOME SECTION -->
+            <section class="home-section" id="section-home">
+                <h1>Homes</h1>
+                
+                <div class="section-header">
+                    <h2>Browse</h2>
+                </div>
+                <div class="browse-grid">
+                    <div class="browse-card" onclick="showSection('allsongs')">
+                        <div class="browse-background gradient-red"></div>
+                        <div class="browse-content">
+                            <h3>Telugu Hits</h3>
+                            <p>The latest Telugu music</p>
+                        </div>
+                    </div>
+                    <div class="browse-card" onclick="filterByMovie('RRR')">
+                        <div class="browse-background gradient-blue"></div>
+                        <div class="browse-content">
+                            <h3>RRR Soundtrack</h3>
+                            <p>Complete RRR collection</p>
+                        </div>
+                    </div>
+                    <div class="browse-card" onclick="filterByMovie('Devara Part 1')">
+                        <div class="browse-background gradient-green"></div>
+                        <div class="browse-content">
+                            <h3>Devara Music</h3>
+                            <p>Latest Devara songs</p>
+                        </div>
+                    </div>
+                    <div class="browse-card" onclick="filterByMovie('Nannaku Prematho')">
+                        <div class="browse-background gradient-purple"></div>
+                        <div class="browse-content">
+                            <h3>Nannaku Prematho</h3>
+                            <p>Sukumar × Jr. NTR</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-header">
+                    <h2>Popular Songs</h2>
+                </div>
+                <div class="songs-grid" id="popularSongsGrid">
+                    <!-- Dynamically filled -->
+                </div>
+
+                <div class="section-header">
+                    <h2>All Movies <span class="arrow">→</span></h2>
+                </div>
+                <div class="movies-grid" id="moviesHomeGrid">
+                    <!-- Dynamically filled -->
+                </div>
+            </section>
+
+            <!-- RECENTLY ADDED SECTION -->
+            <section class="home-section" id="section-recentlyadded" style="display:none;">
+                <h1>Recently Added</h1>
+                <div class="recently-added-grid" id="recentlyAddedGrid"></div>
+            </section>
+
+            <!-- ALL SONGS SECTION -->
+            <section class="home-section songs-section" id="section-allsongs" style="display:none;">
+                <div class="songs-page-header">
+                    <h1>Songs</h1>
+                    <div class="songs-sort-btn">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M2 4h12M4 8h8M6 12h4" stroke="#1d1d1f" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
+                        <svg viewBox="0 0 10 12" xmlns="http://www.w3.org/2000/svg" width="10" height="12"><path d="M5 1v10M1 7l4 4 4-4" stroke="#1d1d1f" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                    </div>
+                </div>
+                <!-- Table header -->
+                <div class="songs-table-header">
+                    <div class="col-name">Name</div>
+                    <div class="col-artist">Artist</div>
+                    <div class="col-album">Album</div>
+                    <div class="col-time">Time</div>
+                </div>
+                <div id="songsList"></div>
+            </section>
+
+            <!-- MOVIES SECTION -->
+            <section class="home-section" id="section-movies" style="display:none;">
+                <h1>Movies</h1>
+                <div class="movies-full-grid" id="moviesFullGrid"></div>
+            </section>
+
+            <!-- MOVIE DETAIL SECTION -->
+            <section class="home-section album-detail-section" id="section-moviedetail" style="display:none;">
+                <button class="back-btn" onclick="showSection('movies')">← Back</button>
+                <div id="movieDetailContent"></div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- ── Mobile slide-in menu ── -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu()">
+        <div class="mobile-menu" onclick="event.stopPropagation()">
+            <!-- Header -->
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-title">
+                    <img src="./favicon.png" alt="" style="height:16px;">
+                    <span>Music</span>
+                </div>
+                <button class="mobile-close-btn" onclick="closeMobileMenu()">✕</button>
+            </div>
+
+            <div class="mobile-menu-body">
+                <!-- Top nav -->
+                <div class="mobile-top-nav">
+                    <a class="mobile-nav-item active" onclick="closeMobileMenu(); setMobileActive(this); showSection('home')">
+                        <span class="mobile-nav-icon"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 9.5L10 3l7 6.5V17a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M7 18v-6h6v6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></span>
+                        <span>Home</span>
+                    </a>
+                    <a class="mobile-nav-item" onclick="closeMobileMenu(); setMobileActive(this)">
+                        <span class="mobile-nav-icon"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="6" height="6" rx="1" fill="currentColor"/><rect x="12" y="2" width="6" height="6" rx="1" fill="currentColor"/><rect x="2" y="12" width="6" height="6" rx="1" fill="currentColor"/><rect x="12" y="12" width="6" height="6" rx="1" fill="currentColor"/></svg></span>
+                        <span>New</span>
+                    </a>
+                    <a class="mobile-nav-item" onclick="closeMobileMenu(); setMobileActive(this)">
+                        <span class="mobile-nav-icon"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M5.5 5.5a6.5 6.5 0 000 9M14.5 5.5a6.5 6.5 0 010 9M3 3a10 10 0 000 14M17 3a10 10 0 010 14" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg></span>
+                        <span>Radio</span>
+                    </a>
+                    <a class="mobile-nav-item" onclick="closeMobileMenu(); setMobileActive(this)">
+                        <span class="mobile-nav-icon"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="5" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M12 12l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                        <span>Search</span>
+                    </a>
+                </div>
+
+                <!-- Library -->
+                <div class="mobile-section-header">
+                    <span class="mobile-section-title">Library</span>
+                    <span class="mobile-section-edit">Edit</span>
+                </div>
+                <a class="mobile-nav-item" onclick="closeMobileMenu(); setMobileActive(this); showSection('recentlyadded')">
+                    <span class="mobile-nav-icon"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5" fill="none"/><polyline points="10,6 10,10 13,13" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span>
+                    <span>Recently Added</span>
+                </a>
+                <a class="mobile-nav-item" onclick="closeMobileMenu(); setMobileActive(this)">
+                    <span class="mobile-nav-icon"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="7" r="3.5" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M2.5 18c0-4.142 3.358-7.5 7.5-7.5s7.5 3.358 7.5 7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span>
+                    <span>Artists</span>
+                </a>
+                <a class="mobile-nav-item" onclick="closeMobileMenu(); setMobileActive(this); showSection('movies')">
+                    <span class="mobile-nav-icon"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="14" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="3" y1="8" x2="17" y2="8" stroke="currentColor" stroke-width="1.2"/><line x1="7" y1="4" x2="7" y2="8" stroke="currentColor" stroke-width="1.2"/><line x1="13" y1="4" x2="13" y2="8" stroke="currentColor" stroke-width="1.2"/></svg></span>
+                    <span>Albums</span>
+                </a>
+                <a class="mobile-nav-item" onclick="closeMobileMenu(); setMobileActive(this); showSection('allsongs')">
+                    <span class="mobile-nav-icon"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8 15V5l9-2v10" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="5.5" cy="15" r="2.5" fill="currentColor"/><circle cx="14.5" cy="13" r="2.5" fill="currentColor"/></svg></span>
+                    <span>Songs</span>
+                </a>
+                <a class="mobile-nav-item" onclick="closeMobileMenu(); setMobileActive(this)">
+                    <span class="mobile-nav-icon"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="16" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/><polygon points="8,7 8,13 14,10" fill="currentColor"/></svg></span>
+                    <span>Music Videos</span>
+                </a>
+                <a class="mobile-nav-item" onclick="closeMobileMenu(); setMobileActive(this)">
+                    <span class="mobile-nav-icon"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="7" r="3.5" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M2.5 18c0-4.142 3.358-7.5 7.5-7.5s7.5 3.358 7.5 7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span>
+                    <span>Made for You</span>
+                </a>
+
+                <!-- Playlists -->
+                <div class="mobile-section-header" style="margin-top:8px">
+                    <span class="mobile-section-title">Playlists</span>
+                </div>
+                <a class="mobile-nav-item" onclick="closeMobileMenu(); setMobileActive(this)">
+                    <span class="mobile-nav-icon"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="6" height="6" rx="1" fill="currentColor"/><rect x="12" y="2" width="6" height="6" rx="1" fill="currentColor"/><rect x="2" y="12" width="6" height="6" rx="1" fill="currentColor"/><rect x="12" y="12" width="6" height="6" rx="1" fill="currentColor"/></svg></span>
+                    <span>All Playlists</span>
+                </a>
+                <a class="mobile-nav-item" onclick="closeMobileMenu(); setMobileActive(this)">
+                    <span class="mobile-nav-icon"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M10 6v8M6 10h8" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span>
+                    <span>Favourite Songs</span>
+                </a>
+
+                <!-- Open in Music -->
+                <div class="mobile-open-music">
+                    <button class="mobile-open-music-btn">
+                        <svg viewBox="0 0 20 20" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M8 15V5l9-2v10" stroke="#86868b" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="5.5" cy="15" r="2.5" fill="#86868b"/><circle cx="14.5" cy="13" r="2.5" fill="#86868b"/></svg>
+                        <span>Open in Music ↗</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- ══════════════════════════════════════════════════════════
-     APP
-══════════════════════════════════════════════════════════ -->
-    <div id="app">
-        <!-- TOP BAR -->
-        <div class="topbar">
-            <button class="ham-btn" onclick="toggleSidebar()">☰</button>
-            <div class="topbar-logo">సంగీతం</div>
-            <div class="search-box">
-                <span class="search-icon">🔍</span>
-                <input class="search-input" id="mainSearch" placeholder="Search songs, movies...">
-            </div>
-            <div class="topbar-right">
-                <span class="topbar-count" id="topbarCount"></span>
-                <div class="tb-btn" onclick="toggleTheme()" title="Toggle theme">🌙</div>
-                <!-- User avatar + dropdown -->
-                <div class="user-menu-wrap">
-                    <button class="user-avatar-btn" id="userAvatarBtn" onclick="toggleUserMenu()">D</button>
-                    <div class="user-dropdown" id="userDropdown">
-                        <div class="ud-header">
-                            <div class="ud-name" id="udName">Demo User</div>
-                            <div class="ud-email" id="udEmail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f094959d9fb083919e9795958498919dde918080">[email&#160;protected]</a></div>
-                        </div>
-                        <button class="ud-item" onclick="showLiked(null)">❤️ Liked Songs</button>
-                        <button class="ud-item" onclick="showRecent(null)">🕐 Recently Played</button>
-                        <button class="ud-item" onclick="toggleTheme()">🌙 Toggle Theme</button>
-                        <button class="ud-item danger" onclick="doSignout()">↩ Sign Out</button>
-                    </div>
-                </div>
-            </div>
+    <!-- ── Mobile mini-player ── -->
+    <div class="mobile-mini-player" id="mobileMiniPlayer" style="display:none">
+        <div class="mini-player-art">
+            <img id="miniPlayerArt" src="" alt="" onerror="this.style.display='none'">
         </div>
-
-        <!-- BODY -->
-        <div class="body-wrap">
-            <!-- SIDEBAR -->
-            <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
-            <aside class="sidebar" id="sidebar">
-                <div class="sidebar-nav">
-                    <div class="nav-section-title">Menu</div>
-                    <div class="nav-item active" id="navAll" onclick="showAll(this)"><span
-                            class="nav-icon">🎵</span><span>All Songs</span></div>
-                    <div class="nav-item" onclick="showLiked(this)"><span class="nav-icon">❤️</span><span>Liked
-                            Songs</span></div>
-                    <div class="nav-item" onclick="showRecent(this)"><span class="nav-icon">🕐</span><span>Recently
-                            Played</span></div>
-                    <div class="nav-section-title">Movies</div>
-                    <div id="movieNav"></div>
-                </div>
-                <div class="sidebar-bottom">
-                    <div class="theme-toggle" onclick="toggleTheme()">
-                        <span id="themeLabel">🌙 Dark Mode</span>
-                        <div class="toggle-track">
-                            <div class="toggle-thumb"></div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- MAIN -->
-            <div class="main-content">
-                <div class="scroll-area" id="scrollArea">
-                    <div id="heroArea"></div>
-                    <div id="galleryArea"></div>
-                    <div id="contentArea"></div>
-                </div>
-
-                <!-- DESKTOP PLAYER -->
-                <div class="player" id="bottomPlayer" style="visibility:hidden;">
-                    <audio id="audioEl"></audio>
-                    <div class="p-song">
-                        <div class="p-thumb" id="pThumb">🎵</div>
-                        <div class="p-info">
-                            <div class="p-title" id="pTitle">—</div>
-                            <div class="p-artist" id="pArtist">—</div>
-                        </div>
-                        <button class="p-like" id="pLikeBtn" onclick="toggleLikeCurrent()">♡</button>
-                    </div>
-                    <div class="p-center">
-                        <div class="p-btns">
-                            <button class="pb active" id="shuffleBtn" onclick="toggleShuffle()">🔀</button>
-                            <button class="pb" onclick="playPrev()">⏮</button>
-                            <button class="pb play-btn" id="playBtn" onclick="togglePlay()">▶</button>
-                            <button class="pb" onclick="playNext()">⏭</button>
-                            <button class="pb" id="repeatBtn" onclick="toggleRepeat()">🔁</button>
-                        </div>
-                        <div class="p-progress">
-                            <span class="pt" id="pCur">0:00</span>
-                            <div class="prog" onclick="seekAudio(event)">
-                                <div class="prog-fill" id="progFill" style="width:0%"></div>
-                            </div>
-                            <span class="pt r" id="pTot">0:00</span>
-                        </div>
-                    </div>
-                    <div class="p-right">
-                        <div class="vol-wrap">
-                            <span class="vol-icon">🔊</span>
-                            <input type="range" class="vol-slider" id="volSlider" min="0" max="100" value="80"
-                                oninput="setVolume(this.value)">
-                        </div>
-                        <button class="np-toggle active" id="npToggleBtn" onclick="toggleNowPlaying()">≡</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- NOW PLAYING PANEL -->
-            <div class="np-panel" id="npPanel">
-                <div class="np-header">Now Playing</div>
-                <div class="np-art-wrap">
-                    <div class="np-art" id="npArt"><span id="npArtInner">🎵</span></div>
-                </div>
-                <div class="np-info">
-                    <div class="np-title" id="npTitle">Select a song</div>
-                    <div class="np-artist" id="npArtist">—</div>
-                    <div class="np-movie" id="npMovieLabel"></div>
-                </div>
-                <div class="np-progress">
-                    <div class="progress-bar" onclick="seekAudio(event)">
-                        <div class="progress-fill" id="npProgFill" style="width:0%">
-                            <div class="progress-thumb"></div>
-                        </div>
-                    </div>
-                    <div class="progress-times"><span class="ptime" id="npCur">0:00</span><span class="ptime"
-                            id="npTot">0:00</span></div>
-                </div>
-                <div class="np-controls">
-                    <button class="nc-btn" onclick="playPrev()">⏮</button>
-                    <button class="nc-btn play" id="npPlayBtn" onclick="togglePlay()">▶</button>
-                    <button class="nc-btn" onclick="playNext()">⏭</button>
-                </div>
-                <div class="np-queue">
-                    <div class="np-queue-title">Up Next</div>
-                    <div id="queueList"></div>
-                </div>
-            </div>
+        <div class="mini-player-info">
+            <div class="mini-player-name" id="miniPlayerName">Not Playing</div>
+            <div class="mini-player-movie" id="miniPlayerMovie"></div>
+        </div>
+        <div class="mini-player-controls">
+            <button class="mini-player-btn" onclick="togglePlayPause()">
+                <svg id="miniPlayIcon" viewBox="0 0 24 24" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 5v14l11-7z" fill="#1d1d1f"/>
+                </svg>
+            </button>
+            <button class="mini-player-btn" onclick="playNext()">
+                <svg viewBox="0 0 24 24" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" fill="#1d1d1f"/>
+                    </svg>
+            </button>
         </div>
     </div>
 
-    <!-- MOBILE MINI PLAYER — volume + prev/next always visible -->
-    <div class="mini-player" id="miniPlayer">
-        <div class="mp-thumb" id="mpThumb">🎵</div>
-        <div class="mp-info">
-            <div class="mp-title" id="mpTitle">—</div>
-            <div class="mp-movie" id="mpMovie">—</div>
-        </div>
-        <div class="mp-controls-row">
-            <button class="mp-prev" onclick="playPrev()">⏮</button>
-            <button class="mp-play" id="mpPlayBtn" onclick="togglePlay()">▶</button>
-            <button class="mp-next" onclick="playNext()">⏭</button>
-        </div>
-        <div class="mp-vol-wrap">
-            <span class="mp-vol-icon">🔊</span>
-            <input type="range" class="mp-vol-slider" id="mpVolSlider" min="0" max="100" value="80"
-                oninput="setVolume(this.value)">
-        </div>
-    </div>
-
-    <!-- MOBILE BOTTOM NAV -->
-    <nav class="mobile-nav">
-        <div class="mobile-nav-inner">
-            <button class="mn-item active" id="mnHome" onclick="mobileNav('home',this)"><span
-                    class="mn-icon">🏠</span><span class="mn-label">Homes</span></button>
-            <button class="mn-item" id="mnMovies" onclick="mobileNav('movies',this)"><span
-                    class="mn-icon">🎬</span><span class="mn-label">Movies</span></button>
-            <button class="mn-item" id="mnLiked" onclick="mobileNav('liked',this)"><span class="mn-icon">❤️</span><span
-                    class="mn-label">Liked</span></button>
-            <button class="mn-item" id="mnProfile" onclick="mobileNav('profile',this)"><span
-                    class="mn-icon">👤</span><span class="mn-label">Profile</span></button>
-        </div>
-    </nav>
-
-    <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <button class="lightbox-close">✕</button>
-        <img id="lightboxImg" src="" alt="">
-    </div>
-
-    <div class="toast-wrap" id="toastWrap"></div>
-
-
-  <script src="./script.js"></script>
 </body>
 </html>
